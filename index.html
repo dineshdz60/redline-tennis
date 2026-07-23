@@ -502,9 +502,13 @@
 
   /* ---- RACKET GRID (search + filter) ---- */
   let curFilter='all';
+  // original racket artwork (no copyright); real photos drop in via r.img (licensed affiliate-feed URL)
+  const racketArt=()=>`<svg viewBox="0 0 120 168" width="72" height="100" aria-hidden="true"><ellipse cx="60" cy="54" rx="42" ry="50" fill="none" stroke="#fff" stroke-width="6"/><g stroke="rgba(255,255,255,.42)" stroke-width="2"><line x1="60" y1="6" x2="60" y2="102"/><line x1="42" y1="10" x2="42" y2="98"/><line x1="78" y1="10" x2="78" y2="98"/><line x1="20" y1="54" x2="100" y2="54"/><line x1="25" y1="34" x2="95" y2="34"/><line x1="25" y1="74" x2="95" y2="74"/></g><path d="M45 100 Q60 120 75 100" fill="none" stroke="#fff" stroke-width="6"/><rect x="55" y="116" width="10" height="46" rx="3" fill="#E30613"/></svg>`;
   function racketCard(r,idx){
     const mt=(l,v)=>`<div class="meter"><label>${l}</label><div class="bar"><i style="--v:${sc(v)}"></i></div><span class="val">${v}</span></div>`;
+    const art=r.img?`<img src="${r.img}" alt="${r.brand} ${r.name} tennis racket" loading="lazy">`:racketArt();
     return `<article class="card">
+      <div class="cardimg${r.img?' hasimg':''}">${art}</div>
       <div class="top"><div><div class="brand">${r.brand}</div><div class="name">${r.name}</div></div><span class="badge">${r.badge}</span></div>
       <div class="body"><div class="specrow">${r.spec.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
       <div class="meters">${mt('Power',r.power)}${mt('Control',r.control)}${mt('Spin',r.spin)}${mt('Comfort',r.comfort)}</div></div>
@@ -591,7 +595,7 @@
     const body=document.getElementById('stringBody');
     if(!arr.length){body.innerHTML='<tr><td colspan="8" style="text-align:center;padding:34px;color:var(--mut);font-weight:600">No strings match that characteristic.</td></tr>';return;}
     body.innerHTML=arr.map(s=>`
-      <tr><td><div class="sbrand">${s.brand}</div><div class="sname">${s.name}</div></td>
+      <tr><td><div class="scell"><span class="sicon ${s.type}" aria-hidden="true"></span><div><div class="sbrand">${s.brand}</div><div class="sname">${s.name}</div></div></div></td>
       <td><span class="type ${s.type}">${s.type==='poly'?'Co-poly':s.type==='multi'?'Multifilament':'Natural gut'}</span><div style="font-size:11px;color:var(--mut);font-weight:700;margin-top:4px">${s.shape} · ${s.stiff}</div></td>
       <td>${mini(s.spin)}</td><td>${mini(s.control)}</td><td>${mini(s.power)}</td><td>${mini(s.comfort)}</td>
       <td style="font-weight:700">${s.best}</td>
