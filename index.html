@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>REDLINE — The tennis gear guide</title>
+<meta name="description" content="REDLINE — the tennis gear guide. Compare rackets and players, search the database, and see power/control/spin ratings. Buy across Europe." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Archivo+Expanded:wght@800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<div class="disclosure"><b>Affiliate disclosure / Werbung:</b> REDLINE may earn a commission when you buy through our store links — at no extra cost to you. Ratings are our own editorial opinion.</div>
+
+<div class="ticker" aria-hidden="true"><span>
+  <b>◆ COMPARE ANY RACKET</b> <b>◆ HEAD-TO-HEAD PRO SETUPS</b> <b>◆ POWER · CONTROL · SPIN SCORES</b> <b>◆ SEARCH THE DATABASE</b> <b>◆ INDEPENDENT REVIEWS</b> <b>◆ BUY ACROSS EUROPE</b>
+  <b>◆ COMPARE ANY RACKET</b> <b>◆ HEAD-TO-HEAD PRO SETUPS</b> <b>◆ POWER · CONTROL · SPIN SCORES</b> <b>◆ SEARCH THE DATABASE</b> <b>◆ INDEPENDENT REVIEWS</b> <b>◆ BUY ACROSS EUROPE</b>
+</span></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="mark"></span>RED<b>LINE</b></a>
+    <nav class="links">
+      <a href="#rackets">Rackets</a>
+      <a href="#strings">Strings</a>
+      <a href="#balls">Balls</a>
+      <button class="megatrigger" id="megaBtn" type="button">Tools ▾</button>
+      <a href="#players">Players</a>
+      <a href="#rankings">Rankings</a>
+      <a href="blog/index.html">Blog</a>
+    </nav>
+    <a class="btn btn-red" href="#tools">Open tools <span class="arw">→</span></a>
+    <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mega"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mega" id="mega">
+    <div class="wrap megagrid">
+      <div class="mcol">
+        <h6><span class="mi"></span> Tennis Racquets</h6>
+        <a class="mlink" onclick="openTool('find')"><b>Find a Racquet</b><i>Answer a few questions, get frames that fit your game.</i></a>
+        <a class="mlink" onclick="goCompare('rackets')"><b>Compare Racquets</b><i>Up to 4 side by side — specs and scores.</i></a>
+        <a class="mlink" onclick="goSearch()"><b>Search All Racquets</b><i>Browse every frame by brand, spec or style.</i></a>
+        <a class="mlink" onclick="goComfort()"><b>Racquet Comfort Score</b><i>See how arm-friendly a frame really is.</i></a>
+        <a class="mlink" onclick="goto('#players')"><b>Pro Player Setups</b><i>What the tour actually plays.</i></a>
+      </div>
+      <div class="mcol">
+        <h6><span class="mi"></span> Tennis Balls</h6>
+        <a class="mlink" onclick="goto('#balls')"><b>Ball Tier List</b> <span class="nw">Ranked</span><i>Every ball ranked S to B tier.</i></a>
+        <a class="mlink" onclick="goto('#balls')"><b>Search All Balls</b><i>Browse balls by surface and level.</i></a>
+        <a class="mlink" onclick="goto('#balls')"><b>Find Tennis Balls</b><i>Match a ball to your court and level.</i></a>
+      </div>
+      <div class="mcol">
+        <h6><span class="mi"></span> Tennis Strings</h6>
+        <a class="mlink" onclick="openTool('string')"><b>Find Tennis Strings</b> <span class="nw">New</span><i>Slide once, get an instant recommendation.</i></a>
+        <a class="mlink" onclick="goto('#strings')"><b>Compare &amp; Sort Strings</b><i>Rank the full table by spin, control or comfort.</i></a>
+        <a class="mlink" onclick="goto('#strings')"><b>Search All Strings</b><i>Filter by type and characteristics.</i></a>
+      </div>
+      <div class="mcol">
+        <h6><span class="mi"></span> Others</h6>
+        <a class="mlink" onclick="openTool('tension')"><b>Perfect Tension Calculator</b> <span class="nw">Popular</span><i>One tension range dialled to how you play.</i></a>
+        <a class="mlink" onclick="openTool('deadpoly')"><b>Dead Poly Warning</b><i>Know when your poly bed has gone dead.</i></a>
+        <a class="mlink" onclick="openTool('skill')"><b>Skill Level Test</b><i>Estimate your real playing level in 4 taps.</i></a>
+        <a class="mlink" onclick="openTool('log')"><b>Stringing Log</b><i>Track every restring and its age.</i></a>
+        <a class="mlink" onclick="openTool('find')"><b>Beginner Setup Quest</b><i>Build a first racquet + string setup, no guessing.</i></a>
+        <a class="mlink" onclick="openTool('rr')"><b>Round Robin Generator</b><i>Fair singles schedules — export to CSV.</i></a>
+        <a class="mlink" onclick="goto('#rankings')"><b>ATP / WTA Rankings</b><i>Live-style tour standings.</i></a>
+        <a class="mlink" onclick="goto('#guides')"><b>Buying Guides</b><i>Best for spin, power, control, beginners.</i></a>
+      </div>
+    </div>
+  </div>
+</header>
+<a id="top"></a>
+
+<main id="main">
+<section class="hero" style="padding:0">
+  <div class="wrap hero-inner">
+    <div class="hcopy">
+      <span class="kicker reveal in">The tennis gear guide</span>
+      <h1 class="reveal in">Compare. Decide. <em>Play.</em></h1>
+      <p class="reveal in">An independent buyer's guide to rackets, strings, balls and pro setups — with our own hands-on ratings for power, control and spin. Compare any two frames side by side, see what the pros play head-to-head, then buy anywhere in Europe.</p>
+      <div class="hero-cta reveal in">
+        <a class="btn btn-red" href="#compare">Compare rackets <span class="arw">→</span></a>
+        <a class="btn btn-ghost" href="#rackets">Browse the index</a>
+      </div>
+      <div class="hstats reveal in">
+        <div class="s"><b id="statR">0</b><span>Rackets rated</span></div>
+        <div class="s"><b id="statS">0</b><span>Strings compared</span></div>
+        <div class="s"><b id="statP">0</b><span>Pro setups</span></div>
+        <div class="s"><b>4</b><span>Score dimensions</span></div>
+      </div>
+    </div>
+    <div class="racq reveal in" aria-hidden="true">
+      <div class="rhead"></div><div class="rsv"></div><div class="rsh"></div><div class="rthroat"></div><div class="rhandle"></div><div class="rball"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TOOL -->
+<section id="compare">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">The tool</span><h2>Compare, <em>head to head.</em></h2></div>
+      <p class="sub">Pick any frames or players. REDLINE highlights the winner in each category with a ★.</p>
+    </div>
+    <div class="cmp-tabs reveal">
+      <button class="cmp-tab on" data-t="rackets" onclick="switchCmp('rackets')">Compare rackets</button>
+      <button class="cmp-tab" data-t="players" onclick="switchCmp('players')">Compare players</button>
+    </div>
+
+    <div id="cmpRackets">
+      <div class="cmp-pick">
+        <select class="sel" id="cr0" aria-label="Compare racket slot 1"></select>
+        <select class="sel" id="cr1" aria-label="Compare racket slot 2"></select>
+        <select class="sel" id="cr2" aria-label="Compare racket slot 3"></select>
+        <select class="sel" id="cr3" aria-label="Compare racket slot 4"></select>
+      </div>
+      <div class="cmptbl reveal"><table id="crTable"></table></div>
+    </div>
+
+    <div id="cmpPlayers" style="display:none">
+      <div class="cmp-pick">
+        <select class="sel" id="cp0" aria-label="Compare player slot 1"></select>
+        <select class="sel" id="cp1" aria-label="Compare player slot 2"></select>
+      </div>
+      <div id="h2h" class="reveal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Interactive tools</span><h2>The <em>toolkit.</em></h2></div>
+      <p class="sub">Quizzes and calculators that read straight off the database to dial in your setup.</p>
+    </div>
+    <div class="cmp-tabs reveal" id="toolTabs" style="flex-wrap:wrap">
+      <button class="cmp-tab on" data-tool="find" onclick="openTool('find')">Find your racquet</button>
+      <button class="cmp-tab" data-tool="tension" onclick="openTool('tension')">Tension calculator</button>
+      <button class="cmp-tab" data-tool="string" onclick="openTool('string')">String finder</button>
+      <button class="cmp-tab" data-tool="skill" onclick="openTool('skill')">Skill level test</button>
+      <button class="cmp-tab" data-tool="deadpoly" onclick="openTool('deadpoly')">Dead poly warning</button>
+      <button class="cmp-tab" data-tool="log" onclick="openTool('log')">Stringing log</button>
+      <button class="cmp-tab" data-tool="rr" onclick="openTool('rr')">Round robin</button>
+    </div>
+    <div class="toolbox reveal">
+      <!-- FIND -->
+      <div class="tool" id="tool-find">
+        <h3>Find your racquet</h3>
+        <p class="thint">Answer three quick questions and REDLINE ranks the frames in the database that best fit your game.</p>
+        <div class="qgrid">
+          <div class="qfield"><label>Your style</label><select class="sel" id="f_style">
+            <option value="power">Aggressive baseliner</option><option value="allround" selected>All-court player</option>
+            <option value="control">Control &amp; touch</option><option value="spin">Heavy topspin</option></select></div>
+          <div class="qfield"><label>Top priority</label><select class="sel" id="f_prio">
+            <option value="power">Power</option><option value="control">Control</option>
+            <option value="spin">Spin</option><option value="comfort">Comfort</option></select></div>
+          <div class="qfield"><label>Level</label><select class="sel" id="f_level">
+            <option value="beg">Beginner</option><option value="int" selected>Intermediate</option><option value="adv">Advanced</option></select></div>
+        </div>
+        <button class="btn btn-red" onclick="runFind()">Find my racquets <span class="arw">→</span></button>
+        <div class="grid" id="findResults" style="margin-top:24px"></div>
+      </div>
+      <!-- TENSION -->
+      <div class="tool" id="tool-tension" style="display:none">
+        <h3>Perfect tension calculator</h3>
+        <p class="thint">A starting string tension tuned to your string type, swing and what you want more of. Adjust ±1 kg to taste.</p>
+        <div class="qgrid">
+          <div class="qfield"><label>String type</label><select class="sel" id="t_type">
+            <option value="poly">Co-poly</option><option value="multi">Multifilament</option><option value="gut">Natural gut</option></select></div>
+          <div class="qfield"><label>Swing style</label><select class="sel" id="t_swing">
+            <option value="full">Full, fast swing</option><option value="compact">Compact / shorter swing</option></select></div>
+          <div class="qfield"><label>You want more</label><select class="sel" id="t_goal">
+            <option value="control">Control</option><option value="power">Power</option></select></div>
+        </div>
+        <button class="btn btn-red" onclick="runTension()">Calculate tension <span class="arw">→</span></button>
+        <div class="tout" id="tensionOut"></div>
+      </div>
+      <!-- STRING FINDER -->
+      <div class="tool" id="tool-string" style="display:none">
+        <h3>String finder</h3>
+        <p class="thint">Slide toward what matters most to you and REDLINE recommends the closest match from the string database.</p>
+        <input type="range" class="rng" id="sf_range" min="0" max="100" value="50" aria-label="Spin to comfort priority" />
+        <div class="rnglabels"><span>◀ Max spin &amp; control</span><span>Max comfort &amp; power ▶</span></div>
+        <div class="sfnow">You're prioritising: <b id="sfNow">Balanced</b></div>
+        <button class="btn btn-red" onclick="runString()">Recommend a string <span class="arw">→</span></button>
+        <div class="sfcard" id="stringOut"></div>
+      </div>
+      <!-- SKILL TEST -->
+      <div class="tool" id="tool-skill" style="display:none">
+        <h3>Skill level test</h3>
+        <p class="thint">Four quick questions to estimate your NTRP-style level and the kind of frame that suits it.</p>
+        <div class="qz" id="skillQuiz"></div>
+        <button class="btn btn-red" onclick="runSkill()">See my level <span class="arw">→</span></button>
+        <div class="lvlout" id="skillOut"></div>
+      </div>
+      <!-- ROUND ROBIN -->
+      <div class="tool" id="tool-rr" style="display:none">
+        <h3>Round robin generator</h3>
+        <p class="thint">Enter player names (one per line). REDLINE builds a fair single round-robin where everyone plays everyone once.</p>
+        <label for="rrNames" class="sr-only">Player names, one per line</label>
+        <textarea id="rrNames" rows="6" placeholder="Rafael&#10;Novak&#10;Carlos&#10;Jannik&#10;Coco&#10;Iga" aria-label="Player names, one per line"></textarea>
+        <div class="rrbtns">
+          <button class="btn btn-red" onclick="runRR()">Generate schedule <span class="arw">→</span></button>
+          <button class="btn btn-ghost" onclick="downloadRR()">Download CSV</button>
+        </div>
+        <div class="rrout" id="rrOut"></div>
+      </div>
+      <!-- DEAD POLY -->
+      <div class="tool" id="tool-deadpoly" style="display:none">
+        <h3>Dead poly warning</h3>
+        <p class="thint">Co-poly strings lose their snap-back and go “dead” long before they break. Tell us your usage and REDLINE estimates whether it's time to restring.</p>
+        <div class="qgrid">
+          <div class="qfield"><label>Hours played since restring</label><select class="sel" id="dp_hours">
+            <option value="5">Under 5 hours</option><option value="10" selected>5–10 hours</option>
+            <option value="18">10–20 hours</option><option value="28">20–30 hours</option><option value="40">30+ hours</option></select></div>
+          <div class="qfield"><label>Your game</label><select class="sel" id="dp_game">
+            <option value="1.3">Heavy topspin / big hitter</option><option value="1" selected>All-court / medium pace</option><option value="0.75">Casual / flatter</option></select></div>
+          <div class="qfield"><label>Poly stiffness</label><select class="sel" id="dp_stiff">
+            <option value="1.25">Stiff (full poly)</option><option value="1" selected>Medium</option><option value="0.85">Soft / co-poly</option></select></div>
+        </div>
+        <button class="btn btn-red" onclick="runDeadPoly()">Check my strings <span class="arw">→</span></button>
+        <div class="tout" id="deadOut"></div>
+      </div>
+      <!-- STRINGING LOG -->
+      <div class="tool" id="tool-log" style="display:none">
+        <h3>Stringing log</h3>
+        <p class="thint">Track every restring so you know exactly how old your current bed is. Saved in your browser only.</p>
+        <div class="qgrid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="qfield"><label>Date</label><input class="sel" type="date" id="lg_date" style="appearance:auto;background-image:none;padding-right:14px"></div>
+          <div class="qfield"><label>Racquet</label><input class="sel" type="text" id="lg_racquet" placeholder="e.g. Pure Aero" style="background-image:none;padding-right:14px"></div>
+          <div class="qfield"><label>String</label><input class="sel" type="text" id="lg_string" placeholder="e.g. RPM Blast" style="background-image:none;padding-right:14px"></div>
+          <div class="qfield"><label>Tension (kg)</label><input class="sel" type="text" id="lg_tension" placeholder="e.g. 24" style="background-image:none;padding-right:14px"></div>
+        </div>
+        <button class="btn btn-red" onclick="addLog()">Add entry <span class="arw">→</span></button>
+        <div class="tblwrap" id="logWrap" style="margin-top:22px;display:none">
+          <table class="data"><thead><tr><th>Date</th><th>Racquet</th><th>String</th><th>Tension</th><th>Age</th><th></th></tr></thead><tbody id="logBody"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RACKET DATABASE -->
+<section id="rackets" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Editor's picks</span><h2>Rackets, <em>rated.</em></h2></div>
+      <p class="sub">Every frame scored 1–10 for power, control, spin and comfort. Search or filter by style.</p>
+    </div>
+    <h3 style="font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:20px;margin-bottom:14px" class="reveal">Racquet tier list</h3>
+    <div class="tiers reveal" id="racketTiers"></div>
+    <div class="controls reveal">
+      <div class="search"><input id="rSearch" type="text" placeholder="Search brand or model…" aria-label="Search rackets" /></div>
+      <div class="chips" id="chips">
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="power">Power</button>
+        <button class="chip" data-f="control">Control</button>
+        <button class="chip" data-f="spin">Spin</button>
+        <button class="chip" data-f="allround">All-round</button>
+      </div>
+    </div>
+    <div class="grid" id="racketGrid"></div>
+    <p class="disc"><strong>How we rate:</strong> every score is REDLINE's own editorial 1–10 judgment, synthesised from published manufacturer specs and hands-on playtest consensus — not lab measurements. Think of it as an opinionated buyer's guide, not a spec sheet. Independent and not affiliated with any manufacturer.</p>
+  </div>
+</section>
+
+<section class="band" style="padding:0" id="guides">
+  <div class="wrap">
+    <h2 class="reveal in">Which is best?</h2>
+    <div class="guides">
+      <a class="guide reveal in" href="#rackets" onclick="setFilter('spin')"><span class="g-no">GUIDE 01</span><p>Frames that grab the ball and rip heavy topspin.</p><h3>Best for spin</h3><span class="pick">Top pick → Babolat Pure Aero</span></a>
+      <a class="guide reveal in" href="#rackets" onclick="setFilter('power')"><span class="g-no">GUIDE 02</span><p>Free depth and pace for shorter, flatter swings.</p><h3>Best for power</h3><span class="pick">Top pick → Babolat Pure Drive</span></a>
+      <a class="guide reveal in" href="#rackets" onclick="setFilter('control')"><span class="g-no">GUIDE 03</span><p>Pinpoint placement and feel for full swings.</p><h3>Best for control</h3><span class="pick">Top pick → Wilson Pro Staff 97</span></a>
+      <a class="guide reveal in" href="#rackets" onclick="setFilter('allround')"><span class="g-no">GUIDE 04</span><p>Forgiving, arm-friendly frames to improve on.</p><h3>Best for beginners</h3><span class="pick">Top pick → Head Radical MP</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="strings">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Editor's picks</span><h2>Strings, <em>decoded.</em></h2></div>
+      <p class="sub">Filter by characteristics or click any column to sort. Poly for spin &amp; control, multi and gut for comfort &amp; power.</p>
+    </div>
+    <div class="chips reveal" id="strChips" style="margin-bottom:22px">
+      <button class="chip on" data-sf="all">All</button>
+      <button class="chip" data-sf="poly">Co-poly</button>
+      <button class="chip" data-sf="multi">Multifilament</button>
+      <button class="chip" data-sf="gut">Natural gut</button>
+      <button class="chip" data-sf="Round">Round</button>
+      <button class="chip" data-sf="Shaped">Shaped</button>
+      <button class="chip" data-sf="Soft">Soft</button>
+      <button class="chip" data-sf="Medium">Medium</button>
+      <button class="chip" data-sf="Stiff">Stiff</button>
+    </div>
+    <div class="tblwrap reveal">
+      <table class="data" id="stringTbl">
+        <thead><tr>
+          <th data-k="name">String</th><th data-k="type">Type</th>
+          <th data-k="spin">Spin <span class="sar">↕</span></th><th data-k="control">Control <span class="sar">↕</span></th>
+          <th data-k="power">Power <span class="sar">↕</span></th><th data-k="comfort">Comfort <span class="sar">↕</span></th>
+          <th data-k="best">Best for</th><th></th>
+        </tr></thead>
+        <tbody id="stringBody"></tbody>
+      </table>
+    </div>
+    <p class="disc">Scores are REDLINE's own indicative 1–10 ratings from published specs and general playtest consensus; specs are representative and vary by generation. Not affiliated with any manufacturer.</p>
+  </div>
+</section>
+
+<section id="balls" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Editor's picks</span><h2>Balls <em>&amp; bounce.</em></h2></div>
+      <p class="sub">Pressurised balls by surface and level — each changes speed, bounce and durability.</p>
+    </div>
+    <div class="tiers reveal" id="ballTiers"></div>
+    <div class="balls" id="ballGrid"></div>
+  </div>
+</section>
+
+<section id="players" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Pro setups</span><h2>What the <em>pros</em> play.</h2></div>
+      <p class="sub">The gear behind the top of the game. Tap “Compare players” above for head-to-head.</p>
+    </div>
+    <div class="players" id="playerGrid"></div>
+    <p class="disc">Pro equipment based on publicly reported endorsements; many pros use custom “pro stock” frames painted to resemble retail models.</p>
+  </div>
+</section>
+
+<!-- RANKINGS -->
+<section id="rankings" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">Live-style standings</span><h2>ATP &amp; WTA <em>rankings.</em></h2></div>
+      <p class="sub">The top of both tours at a glance, with weekly movement. Switch tours below.</p>
+    </div>
+    <div class="cmp-tabs reveal">
+      <button class="cmp-tab on" data-rk="ATP" onclick="showRank('ATP')">ATP — Men</button>
+      <button class="cmp-tab" data-rk="WTA" onclick="showRank('WTA')">WTA — Women</button>
+    </div>
+    <div class="tblwrap reveal">
+      <table class="data"><thead><tr><th>#</th><th>Player</th><th>Country</th><th>Points</th><th>Move</th></tr></thead><tbody id="rankBody"></tbody></table>
+    </div>
+    <p class="disc">Representative snapshot for illustration — pro rankings change every week. Swap in a live feed and this table updates automatically.</p>
+  </div>
+</section>
+
+<section class="news">
+  <div class="wrap"><div class="reveal in">
+    <h2>The gear <em>brief.</em></h2>
+    <p>New ratings, string reviews and pro setup breakdowns. No spam, just tennis.</p>
+    <form class="nform" id="newsForm">
+      <label for="newsEmail" class="sr-only">Email address</label>
+      <input type="email" id="newsEmail" placeholder="your@email.com" required />
+      <button class="btn btn-red" type="submit">Subscribe <span class="arw">→</span></button>
+    </form>
+    <p id="newsMsg" aria-live="polite" style="font-size:13px;color:rgba(255,255,255,.7);margin-top:14px;min-height:18px"></p>
+  </div></div>
+</section>
+
+<!-- BLOG TEASER -->
+<section id="blog" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="lft"><span class="eyebrow">The blog</span><h2>From the <em>blog.</em></h2></div>
+      <p class="sub">Opinionated gear writing from the people who rate the gear.</p>
+    </div>
+    <div class="bloglist">
+      <a class="postcard reveal" href="blog/hyped-racket-worth-it.html">
+        <div class="pcimg"><span class="pcmark"></span></div>
+        <div class="pcbody"><span class="pctag">Buyer's Guide</span><h3>The Hyped Racket: Real Upgrade or Marketing?</h3><p>The thing changing your game is usually the string and the tension — not this season's darling frame.</p><span class="pcread">6 min read →</span></div>
+      </a>
+      <a class="postcard reveal" href="blog/wimbledon-what-it-teaches-your-gear.html">
+        <div class="pcimg"><span class="pcmark"></span></div>
+        <div class="pcbody"><span class="pctag">Grass Court</span><h3>What Wimbledon Teaches You About Your Gear</h3><p>Grass exposes footwork, rewards the serve-and-volley, and proves your shoes matter more than your frame.</p><span class="pcread">7 min read →</span></div>
+      </a>
+      <a class="postcard reveal" href="blog/next-grand-slams-what-to-watch.html">
+        <div class="pcimg"><span class="pcmark"></span></div>
+        <div class="pcbody"><span class="pctag">Grand Slams</span><h3>The Next Grand Slams: What to Watch</h3><p>New York hard courts to Melbourne heat — the surface shifts and the gear angles worth tracking.</p><span class="pcread">6 min read →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol fabout"><a href="#top" class="logo"><span class="mark"></span>RED<b>LINE</b></a>
+        <p>The independent tennis gear index. Compare it, rate it, buy it — across Europe.</p></div>
+      <div class="fcol"><h5>Index</h5><a href="#rackets">Rackets</a><a href="#compare">Compare</a><a href="#strings">Strings</a><a href="#balls">Balls</a><a href="#players">Pro setups</a></div>
+      <div class="fcol"><h5>Guides</h5><a href="#guides">Best for spin</a><a href="#guides">Best for power</a><a href="#guides">Best for control</a><a href="#guides">Best for beginners</a></div>
+      <div class="fcol"><h5>Buy in Europe</h5>
+        <a href="https://www.tennis-point.eu/" target="_blank" rel="noopener">Tennis-Point</a>
+        <a href="https://www.amazon.de/s?k=tennis" target="_blank" rel="noopener">Amazon.de</a>
+        <a href="https://www.tennispro.eu/" target="_blank" rel="noopener">Tennispro</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 REDLINE — the tennis gear guide.</span><span><span class="dot">●</span> Independent · we may earn a commission · Buy links ship within Europe</span></div>
+  </div>
+</footer>
+
+<script>
+  const EU={tp:"https://www.tennis-point.eu/",twe:"https://www.tenniswarehouse-europe.com/",pro:"https://www.tennispro.eu/"};
+  // ▼▼ AFFILIATE: paste your Awin/Amazon tracking params here after program approval (e.g. "?awc=XXXX" or "&tag=yourtag-21") ▼▼
+  const AFF_TAG="";
+  // Deep-link a Buy button to the store's SEARCH for that product (far better attribution than a homepage link).
+  // Tennis Warehouse Europe has no affiliate program (per research) → its traffic is rerouted to Tennis-Point.
+  function buyLink(item){
+    const q=encodeURIComponent(((item.brand?item.brand+" ":"")+item.name).trim());
+    let base=item.buy||EU.tp;
+    if(base.includes("tenniswarehouse-europe")) base=EU.tp;           // no program → monetizable alternative
+    if(base.includes("tennis-point"))  return `https://www.tennis-point.eu/search?q=${q}${AFF_TAG}`;
+    if(base.includes("tennispro"))     return `https://www.tennispro.eu/catalogsearch/result/?q=${q}${AFF_TAG}`;
+    return `https://www.amazon.de/s?k=${encodeURIComponent(((item.brand?item.brand+" ":"")+item.name+" tennis").trim())}${AFF_TAG}`;
+  }
+  const buyLabel=item=>`Buy ${((item.brand?item.brand+" ":"")+item.name).trim()} at a European store (opens in new tab)`;
+
+  const rackets=[
+    {brand:"Babolat",name:"Pure Aero",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:10,comfort:6,verdict:"The spin benchmark — aggressive topspin machine.",buy:EU.tp},
+    {brand:"Babolat",name:"Pure Drive",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:10,control:6,spin:7,comfort:5,verdict:"Effortless pace and depth for compact swings.",buy:EU.tp},
+    {brand:"Babolat",name:"Pure Strike 98",style:"control",badge:"Control · Power",spec:["305g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"Crisp precision with a punchy, connected feel.",buy:EU.tp},
+    {brand:"Babolat",name:"Pure Aero Rafa",style:"spin",badge:"Spin · Power",spec:["315g","100 in²","16×19"],power:9,control:6,spin:10,comfort:5,verdict:"Heavier, more plowing spin monster.",buy:EU.tp},
+    {brand:"Wilson",name:"Pro Staff 97 v14",style:"control",badge:"Control",spec:["315g","97 in²","16×19"],power:5,control:10,spin:6,comfort:6,verdict:"Pure feel and precision for full swings.",buy:EU.twe},
+    {brand:"Wilson",name:"Blade 98 v9",style:"control",badge:"Control · Feel",spec:["305g","98 in²","16×19"],power:6,control:9,spin:8,comfort:7,verdict:"Flexible, plush and razor-accurate.",buy:EU.twe},
+    {brand:"Wilson",name:"Clash 100 v3",style:"allround",badge:"Comfort · Power",spec:["295g","100 in²","16×19"],power:8,control:6,spin:7,comfort:10,verdict:"Uniquely flexible and easy on the arm.",buy:EU.twe},
+    {brand:"Wilson",name:"Ultra 100 v4",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:9,control:6,spin:7,comfort:7,verdict:"Big, stable and forgiving pop.",buy:EU.twe},
+    {brand:"Head",name:"Speed MP",style:"allround",badge:"All-round",spec:["300g","100 in²","16×19"],power:7,control:8,spin:7,comfort:7,verdict:"Balanced do-everything modern frame.",buy:EU.tp},
+    {brand:"Head",name:"Radical MP",style:"allround",badge:"All-round",spec:["300g","98 in²","16×19"],power:7,control:8,spin:7,comfort:8,verdict:"Forgiving, comfortable and easy to improve on.",buy:EU.pro},
+    {brand:"Head",name:"Gravity MP",style:"control",badge:"Control · Spin",spec:["295g","100 in²","16×19"],power:6,control:9,spin:8,comfort:8,verdict:"Comfortable control with easy spin access.",buy:EU.tp},
+    {brand:"Head",name:"Extreme MP",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:9,comfort:6,verdict:"Spin-friendly with a lively, whippy feel.",buy:EU.tp},
+    {brand:"Head",name:"Boom MP",style:"allround",badge:"All-round",spec:["295g","100 in²","16×19"],power:8,control:7,spin:7,comfort:8,verdict:"Smooth, stable and easy to swing fast.",buy:EU.pro},
+    {brand:"Yonex",name:"EZONE 98",style:"power",badge:"Power · Comfort",spec:["305g","98 in²","16×19"],power:8,control:7,spin:7,comfort:9,verdict:"Pocketed feel with pace and comfort.",buy:EU.twe},
+    {brand:"Yonex",name:"VCORE 100",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:7,control:7,spin:9,comfort:7,verdict:"Explosive spin with a lively response.",buy:EU.pro},
+    {brand:"Yonex",name:"Percept 97",style:"control",badge:"Control · Feel",spec:["310g","97 in²","16×19"],power:6,control:9,spin:7,comfort:8,verdict:"Flexible, arm-friendly modern control.",buy:EU.twe},
+    {brand:"Tecnifibre",name:"TFight 305",style:"control",badge:"Control",spec:["305g","98 in²","18×19"],power:7,control:9,spin:7,comfort:6,verdict:"Solid and connected — built for flat drivers.",buy:EU.pro},
+    {brand:"Tecnifibre",name:"Tempo 298",style:"allround",badge:"All-round",spec:["298g","100 in²","16×19"],power:8,control:7,spin:7,comfort:8,verdict:"Stable, comfortable women's-line all-rounder.",buy:EU.pro},
+    {brand:"Dunlop",name:"CX 200",style:"control",badge:"Control",spec:["305g","98 in²","16×19"],power:5,control:9,spin:7,comfort:6,verdict:"Crisp, precise player's frame with great feel.",buy:EU.twe},
+    {brand:"Dunlop",name:"FX 500",style:"power",badge:"Power · Spin",spec:["300g","100 in²","16×19"],power:9,control:6,spin:8,comfort:7,verdict:"Fast, powerful and spin-friendly.",buy:EU.twe},
+    {brand:"Prince",name:"Phantom 100",style:"control",badge:"Control · Feel",spec:["305g","100 in²","18×20"],power:5,control:9,spin:6,comfort:9,verdict:"Ultra-flexible, buttery touch and control.",buy:EU.pro},
+    {brand:"Babolat",name:"Pure Aero 98",style:"spin",badge:"Spin · Control",spec:["305g","98 in²","16×20"],power:7,control:8,spin:9,comfort:6,verdict:"Tighter, more controlled take on the Aero.",buy:EU.tp}
+  ];
+
+  const strings=[
+    {brand:"Luxilon",name:"ALU Power",type:"poly",spin:8,control:9,power:6,comfort:4,best:"Control baseliners",buy:EU.twe},
+    {brand:"Babolat",name:"RPM Blast",type:"poly",spin:10,control:8,power:6,comfort:4,best:"Heavy topspin",buy:EU.tp},
+    {brand:"Solinco",name:"Hyper-G",type:"poly",spin:9,control:8,power:6,comfort:5,best:"Spin + control",buy:EU.twe},
+    {brand:"Solinco",name:"Tour Bite",type:"poly",spin:9,control:9,power:5,comfort:4,best:"Max spin & bite",buy:EU.twe},
+    {brand:"Luxilon",name:"4G",type:"poly",spin:7,control:9,power:6,comfort:5,best:"Tension keepers",buy:EU.tp},
+    {brand:"Head",name:"Lynx Tour",type:"poly",spin:8,control:8,power:6,comfort:5,best:"All-court control",buy:EU.tp},
+    {brand:"Yonex",name:"Poly Tour Pro",type:"poly",spin:7,control:8,power:7,comfort:6,best:"Comfortable poly",buy:EU.twe},
+    {brand:"Wilson",name:"NXT",type:"multi",spin:5,control:6,power:8,comfort:9,best:"Comfort & arm care",buy:EU.pro},
+    {brand:"Tecnifibre",name:"X-One Biphase",type:"multi",spin:5,control:6,power:9,comfort:9,best:"Power + touch",buy:EU.pro},
+    {brand:"Babolat",name:"VS Touch",type:"gut",spin:6,control:7,power:9,comfort:10,best:"Ultimate feel",buy:EU.tp},
+    {brand:"Wilson",name:"Natural Gut",type:"gut",spin:6,control:7,power:10,comfort:10,best:"Power & comfort",buy:EU.twe}
+  ];
+  // string characteristics (shape + stiffness) for the finder/filter
+  const strMeta={"ALU Power":["Round","Stiff"],"RPM Blast":["Shaped","Stiff"],"Hyper-G":["Shaped","Medium"],"Tour Bite":["Shaped","Stiff"],"4G":["Round","Stiff"],"Lynx Tour":["Shaped","Medium"],"Poly Tour Pro":["Round","Medium"],"NXT":["Round","Soft"],"X-One Biphase":["Round","Soft"],"VS Touch":["Round","Soft"],"Natural Gut":["Round","Soft"]};
+  strings.forEach(s=>{const m=strMeta[s.name]||["Round","Medium"];s.shape=m[0];s.stiff=m[1];});
+
+  // ATP / WTA rankings — representative snapshot (rankings change weekly)
+  const rankings={
+    ATP:[["Jannik Sinner","ITA",11830,"="],["Carlos Alcaraz","ESP",9410,"up"],["Alexander Zverev","GER",7215,"="],["Novak Djokovic","SRB",6130,"down"],["Daniil Medvedev","RUS",5390,"down"],["Taylor Fritz","USA",5100,"up"],["Stefanos Tsitsipas","GRE",4050,"="],["Holger Rune","DEN",3985,"up"],["Alex de Minaur","AUS",3810,"="],["Casper Ruud","NOR",3650,"down"],["Grigor Dimitrov","BUL",3320,"up"],["Tommy Paul","USA",3175,"="]],
+    WTA:[["Aryna Sabalenka","BLR",9906,"="],["Iga Świątek","POL",8295,"="],["Coco Gauff","USA",7150,"up"],["Elena Rybakina","KAZ",5471,"up"],["Jessica Pegula","USA",5203,"down"],["Jasmine Paolini","ITA",4068,"up"],["Zheng Qinwen","CHN",3910,"down"],["Emma Navarro","USA",3698,"="],["Markéta Vondroušová","CZE",3025,"up"],["Daria Kasatkina","AUS",2940,"="],["Jeļena Ostapenko","LAT",2810,"down"],["Madison Keys","USA",2755,"up"]]
+  };
+
+  const balls=[
+    {name:"Wilson US Open",meta:"Extra Duty · Hard court",forr:"All-court / hard",buy:EU.twe},
+    {name:"Dunlop ATP",meta:"All surface · Tour spec",forr:"All surfaces",buy:EU.tp},
+    {name:"Babolat Gold",meta:"All court · Durable",forr:"Club & match play",buy:EU.tp},
+    {name:"Head Tour",meta:"Pressurised · All court",forr:"Training & match",buy:EU.pro},
+    {name:"Slazenger Wimbledon",meta:"Grass & all court",forr:"Grass / all-court",buy:EU.twe},
+    {name:"Penn Championship",meta:"Value · High volume",forr:"Practice",buy:EU.pro}
+  ];
+
+  const players=[
+    {name:"Novak Djokovic",nat:"SRB",tour:"ATP",racket:"Head Speed",string:"Poly / gut hybrid",style:"Control baseliner"},
+    {name:"Carlos Alcaraz",nat:"ESP",tour:"ATP",racket:"Babolat Pure Aero",string:"Babolat RPM Blast",style:"Aggressive all-court"},
+    {name:"Jannik Sinner",nat:"ITA",tour:"ATP",racket:"Head Speed Pro",string:"Head poly",style:"Flat-hitting baseliner"},
+    {name:"Rafael Nadal",nat:"ESP",tour:"ATP",racket:"Babolat Pure Aero",string:"Babolat RPM Blast",style:"Heavy topspin"},
+    {name:"Alexander Zverev",nat:"GER",tour:"ATP",racket:"Head Gravity",string:"Poly hybrid",style:"Big serve baseliner"},
+    {name:"Daniil Medvedev",nat:"RUS",tour:"ATP",racket:"Tecnifibre TFight",string:"Poly",style:"Flat counterpuncher"},
+    {name:"Stefanos Tsitsipas",nat:"GRE",tour:"ATP",racket:"Wilson Blade",string:"Luxilon / gut",style:"All-court one-hander"},
+    {name:"Iga Świątek",nat:"POL",tour:"WTA",racket:"Tecnifibre Tempo",string:"Luxilon / gut",style:"Spin baseliner"},
+    {name:"Aryna Sabalenka",nat:"BLR",tour:"WTA",racket:"Wilson Blade",string:"Luxilon 4G",style:"Power baseliner"},
+    {name:"Coco Gauff",nat:"USA",tour:"WTA",racket:"Head Boom",string:"Poly hybrid",style:"Athletic all-court"},
+    {name:"Elena Rybakina",nat:"KAZ",tour:"WTA",racket:"Yonex EZONE",string:"Poly",style:"Big-serve baseliner"},
+    {name:"Jessica Pegula",nat:"USA",tour:"WTA",racket:"Yonex VCORE",string:"Poly hybrid",style:"Consistent baseliner"}
+  ];
+
+  document.getElementById('statR').textContent=rackets.length;
+  document.getElementById('statS').textContent=strings.length;
+  document.getElementById('statP').textContent=players.length;
+
+  const sc=v=>(v/10).toFixed(3);
+  const initials=n=>n.split(' ').map(w=>w[0]).join('').slice(0,2);
+
+  /* ---- RACKET GRID (search + filter) ---- */
+  let curFilter='all';
+  function racketCard(r,idx){
+    const mt=(l,v)=>`<div class="meter"><label>${l}</label><div class="bar"><i style="--v:${sc(v)}"></i></div><span class="val">${v}</span></div>`;
+    return `<article class="card">
+      <div class="top"><div><div class="brand">${r.brand}</div><div class="name">${r.name}</div></div><span class="badge">${r.badge}</span></div>
+      <div class="body"><div class="specrow">${r.spec.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
+      <div class="meters">${mt('Power',r.power)}${mt('Control',r.control)}${mt('Spin',r.spin)}${mt('Comfort',r.comfort)}</div></div>
+      <div class="foot"><button class="addcmp" onclick="addToCompare(${idx})" aria-label="Add ${r.brand} ${r.name} to comparison">+ Compare</button><a class="buy" href="${buyLink(r)}" target="_blank" rel="noopener" aria-label="${buyLabel(r)}">Buy →</a></div>
+    </article>`;
+  }
+  function renderRackets(){
+    const q=(document.getElementById('rSearch').value||'').toLowerCase().trim();
+    const list=rackets.map((r,i)=>({r,i})).filter(({r})=>(curFilter==='all'||r.style===curFilter)&&(!q||(r.brand+' '+r.name).toLowerCase().includes(q)));
+    const g=document.getElementById('racketGrid');
+    g.innerHTML=list.length?list.map(({r,i})=>racketCard(r,i)).join(''):'<div class="empty">No rackets match — try another search or filter.</div>';
+  }
+  window.setFilter=f=>{curFilter=f;document.querySelectorAll('#chips .chip').forEach(c=>c.classList.toggle('on',c.dataset.f===f));renderRackets();};
+  document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)setFilter(b.dataset.f);});
+  document.getElementById('rSearch').addEventListener('input',renderRackets);
+
+  /* ---- COMPARE: tabs ---- */
+  window.switchCmp=t=>{
+    document.querySelectorAll('.cmp-tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+    document.getElementById('cmpRackets').style.display=t==='rackets'?'':'none';
+    document.getElementById('cmpPlayers').style.display=t==='players'?'':'none';
+  };
+
+  /* ---- COMPARE RACKETS ---- */
+  const crSel=[0,1,2,3].map(i=>document.getElementById('cr'+i));
+  crSel.forEach((sel,slot)=>{
+    sel.innerHTML='<option value="-1">— none —</option>'+rackets.map((r,i)=>`<option value="${i}">${r.brand} ${r.name}</option>`).join('');
+    sel.value=slot; // default first three
+    sel.addEventListener('change',renderCompareRackets);
+  });
+  window.addToCompare=idx=>{
+    const empty=crSel.find(s=>s.value==='-1')||crSel[crSel.length-1];
+    empty.value=idx; renderCompareRackets();
+    switchCmp('rackets');
+    document.getElementById('compare').scrollIntoView({behavior:'smooth'});
+  };
+  function renderCompareRackets(){
+    const sel=crSel.map(s=>+s.value).filter(v=>v>=0).map(v=>rackets[v]);
+    const t=document.getElementById('crTable');
+    if(!sel.length){t.innerHTML='<tr><td class="empty" style="border:0">Pick at least one racket to compare.</td></tr>';return;}
+    const dims=[['power','Power'],['control','Control'],['spin','Spin'],['comfort','Comfort']];
+    let head='<thead><tr><th class="rowlab"></th>'+sel.map(r=>`<th><div class="cbrand">${r.brand}</div><div class="cname">${r.name}</div></th>`).join('')+'</tr></thead>';
+    let rows='';
+    // spec rows
+    ['Weight','Head size','Pattern'].forEach((lab,k)=>{
+      rows+=`<tr><td class="rowlab">${lab}</td>`+sel.map(r=>`<td>${r.spec[k]||'—'}</td>`).join('')+'</tr>';
+    });
+    rows+=`<tr><td class="rowlab">Style</td>`+sel.map(r=>`<td style="text-transform:capitalize">${r.badge}</td>`).join('')+'</tr>';
+    dims.forEach(([key,lab])=>{
+      const max=Math.max(...sel.map(r=>r[key]));
+      rows+=`<tr><td class="rowlab">${lab}</td>`+sel.map(r=>`<td class="${r[key]===max?'win':''}"><div class="cbar"><div class="bar"><i style="--v:${sc(r[key])}"></i></div><b>${r[key]}</b></div></td>`).join('')+'</tr>';
+    });
+    rows+=`<tr><td class="rowlab">Buy</td>`+sel.map(r=>`<td><a class="cbuy" href="${buyLink(r)}" target="_blank" rel="noopener" aria-label="${buyLabel(r)}">Buy in EU →</a></td>`).join('')+'</tr>';
+    t.innerHTML=head+'<tbody>'+rows+'</tbody>';
+  }
+
+  /* ---- COMPARE PLAYERS ---- */
+  const cpSel=[0,1].map(i=>document.getElementById('cp'+i));
+  cpSel.forEach((sel,slot)=>{
+    sel.innerHTML=players.map((p,i)=>`<option value="${i}">${p.name}</option>`).join('');
+    sel.value=slot;
+    sel.addEventListener('change',renderH2H);
+  });
+  function playerSide(p,dark){
+    return `<div class="side ${dark?'b':''}"><span class="pinit">${initials(p.name)}</span>
+      <h4>${p.name}</h4><div class="pnat">${p.nat} · ${p.tour}</div>
+      <div class="krow"><span>Racket</span><b>${p.racket}</b></div>
+      <div class="krow"><span>String</span><b>${p.string}</b></div>
+      <div class="krow"><span>Style</span><b>${p.style}</b></div></div>`;
+  }
+  function renderH2H(){
+    const a=players[+cpSel[0].value],b=players[+cpSel[1].value];
+    document.getElementById('h2h').innerHTML=playerSide(a,false)+'<div class="vs">VS</div>'+playerSide(b,true);
+  }
+
+  /* ---- STRINGS (sortable) ---- */
+  let sortKey='spin',sortDir=-1;
+  function mini(v){return `<div class="mini"><div class="minibar"><i style="width:${v*10}%"></i></div><b>${v}</b></div>`;}
+  let strFilter='all';
+  function renderStrings(){
+    const arr=[...strings]
+      .filter(s=>strFilter==='all'||s.type===strFilter||s.shape===strFilter||s.stiff===strFilter)
+      .sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(typeof x==='string')return x.localeCompare(y)*sortDir;return (x-y)*sortDir;});
+    const body=document.getElementById('stringBody');
+    if(!arr.length){body.innerHTML='<tr><td colspan="8" style="text-align:center;padding:34px;color:var(--mut);font-weight:600">No strings match that characteristic.</td></tr>';return;}
+    body.innerHTML=arr.map(s=>`
+      <tr><td><div class="sbrand">${s.brand}</div><div class="sname">${s.name}</div></td>
+      <td><span class="type ${s.type}">${s.type==='poly'?'Co-poly':s.type==='multi'?'Multifilament':'Natural gut'}</span><div style="font-size:11px;color:var(--mut);font-weight:700;margin-top:4px">${s.shape} · ${s.stiff}</div></td>
+      <td>${mini(s.spin)}</td><td>${mini(s.control)}</td><td>${mini(s.power)}</td><td>${mini(s.comfort)}</td>
+      <td style="font-weight:700">${s.best}</td>
+      <td><a class="tbuy" href="${buyLink(s)}" target="_blank" rel="noopener" aria-label="${buyLabel(s)}">Buy →</a></td></tr>`).join('');
+  }
+  document.getElementById('strChips').addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;
+    document.querySelectorAll('#strChips .chip').forEach(c=>c.classList.remove('on'));b.classList.add('on');
+    strFilter=b.dataset.sf;renderStrings();
+  });
+  function applySort(th){
+    const k=th.dataset.k;
+    if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=(k==='name'||k==='type'||k==='best')?1:-1;}
+    document.querySelectorAll('#stringTbl thead th[data-k]').forEach(h=>{
+      const active=h.dataset.k===sortKey;
+      h.setAttribute('aria-sort',active?(sortDir<0?'descending':'ascending'):'none');
+      const sar=h.querySelector('.sar'); if(sar)sar.textContent=active?(sortDir<0?'↓':'↑'):'↕';
+    });
+    renderStrings();
+  }
+  document.querySelectorAll('#stringTbl thead th[data-k]').forEach(th=>{
+    th.tabIndex=0; th.setAttribute('role','button'); th.setAttribute('aria-sort','none');
+    th.addEventListener('click',()=>applySort(th));
+    th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();applySort(th);}});
+  });
+
+  /* ---- BALLS + PLAYERS grids ---- */
+  document.getElementById('ballGrid').innerHTML=balls.map(b=>`<a class="ball" href="${buyLink(b)}" target="_blank" rel="noopener" aria-label="${buyLabel(b)}"><span class="bdisc"></span><div><h4>${b.name}</h4><div class="bmeta">${b.meta}</div><div class="bfor">Best for: ${b.forr}</div></div></a>`).join('');
+  document.getElementById('playerGrid').innerHTML=players.map(p=>`<article class="player"><div class="pimg"><span class="prank">${p.tour}</span><span class="pinit">${initials(p.name)}</span></div><div class="pbody"><h4>${p.name}</h4><div class="pnat">${p.nat} · ${p.style}</div><div class="pkit"><div><span>Racket</span>${p.racket}</div><div><span>String</span>${p.string}</div></div></div></article>`).join('');
+
+  /* ---- MEGA MENU ---- */
+  const mega=document.getElementById('mega'),megaBtn=document.getElementById('megaBtn');
+  megaBtn.addEventListener('click',e=>{e.stopPropagation();mega.classList.toggle('open');megaBtn.classList.toggle('on');});
+  document.addEventListener('click',e=>{if(!mega.contains(e.target)&&e.target!==megaBtn){mega.classList.remove('open');megaBtn.classList.remove('on');}});
+  function closeMega(){mega.classList.remove('open');megaBtn.classList.remove('on');}
+  window.goto=sel=>{closeMega();document.querySelector(sel).scrollIntoView({behavior:'smooth'});};
+  window.goCompare=t=>{closeMega();switchCmp(t);document.getElementById('compare').scrollIntoView({behavior:'smooth'});};
+  window.goSearch=()=>{closeMega();document.getElementById('rackets').scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('rSearch').focus(),400);};
+  window.goComfort=()=>{closeMega();setFilter('all');document.getElementById('rackets').scrollIntoView({behavior:'smooth'});
+    // reorder grid by comfort
+    const g=document.getElementById('racketGrid');
+    const sorted=rackets.map((r,i)=>({r,i})).sort((a,b)=>b.r.comfort-a.r.comfort);
+    g.innerHTML=sorted.map(({r,i})=>racketCard(r,i)).join('');};
+
+  /* ---- TOOL TABS ---- */
+  window.openTool=name=>{
+    closeMega();
+    document.querySelectorAll('#toolTabs .cmp-tab').forEach(t=>t.classList.toggle('on',t.dataset.tool===name));
+    ['find','tension','string','skill','deadpoly','log','rr'].forEach(n=>{document.getElementById('tool-'+n).style.display=n===name?'':'none';});
+    document.getElementById('tools').scrollIntoView({behavior:'smooth'});
+  };
+
+  /* ---- FIND YOUR RACQUET ---- */
+  window.runFind=()=>{
+    const style=document.getElementById('f_style').value,prio=document.getElementById('f_prio').value,lvl=document.getElementById('f_level').value;
+    const scored=rackets.map((r,i)=>{
+      let s=r[prio]*2 + (r.style===style?4:0);
+      if(lvl==='beg') s+=r.comfort*0.7;
+      if(lvl==='adv') s+=r.control*0.4;
+      if(lvl==='int') s+=(r.comfort+r.control)*0.2;
+      return {r,i,s};
+    }).sort((a,b)=>b.s-a.s).slice(0,3);
+    document.getElementById('findResults').innerHTML=scored.map(({r,i})=>racketCard(r,i)).join('');
+  };
+
+  /* ---- TENSION CALCULATOR ---- */
+  window.runTension=()=>{
+    const type=document.getElementById('t_type').value,swing=document.getElementById('t_swing').value,goal=document.getElementById('t_goal').value;
+    let base={poly:23,multi:25,gut:26}[type];
+    base += goal==='control'?1.5:-1.5;
+    base += swing==='full'?0.5:-0.5;
+    const lo=(base-1).toFixed(1),hi=(base+1).toFixed(1);
+    const loL=((base-1)*2.2046).toFixed(0),hiL=((base+1)*2.2046).toFixed(0);
+    const typeN={poly:'co-poly',multi:'multifilament',gut:'natural gut'}[type];
+    const cx=(20+(Math.min(30,Math.max(18,base))-18)/12*260).toFixed(0);
+    const cy=(25+(Math.min(30,Math.max(18,base))-18)/12*82).toFixed(0);
+    const curve=`<svg viewBox="0 0 300 140" width="100%" style="max-width:420px;margin-top:8px" role="img" aria-label="Power vs tension curve">
+      <line x1="20" y1="120" x2="288" y2="120" stroke="#0A0A0A" stroke-width="1.5"/>
+      <line x1="20" y1="18" x2="20" y2="120" stroke="#0A0A0A" stroke-width="1.5"/>
+      <path d="M20 28 C 110 44 200 96 288 114" fill="none" stroke="#E30613" stroke-width="3"/>
+      <line x1="${cx}" y1="18" x2="${cx}" y2="120" stroke="#E30613" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="${cx}" cy="${cy}" r="6" fill="#E30613" stroke="#fff" stroke-width="2"/>
+      <text x="24" y="14" font-size="9" font-weight="800" fill="#0A0A0A">MORE POWER</text>
+      <text x="200" y="134" font-size="9" font-weight="800" fill="#0A0A0A">HIGHER TENSION →</text>
+    </svg>`;
+    const out=document.getElementById('tensionOut');
+    out.innerHTML=`<div class="big"><span class="num">${lo}–${hi}</span><span class="unit">kg &nbsp;/&nbsp; ${loL}–${hiL} lbs</span></div>
+      <div class="why">Stiffer ${typeN} strings are strung <b>lower</b> for comfort; your ${swing==='full'?'full swing lets you climb a touch higher for control':'compact swing prefers a slightly lower tension for free depth'}, and prioritising <b>${goal}</b> ${goal==='control'?'pulls tension up':'drops tension down'}. Your spot sits on the power-vs-tension curve below — start mid-range and adjust ±1 kg.${curve}</div>`;
+    out.classList.add('show');
+  };
+
+  /* ---- STRING FINDER ---- */
+  window.runString=()=>{
+    const t=+document.getElementById('sf_range').value/100; // 0 = spin, 1 = comfort
+    const best=[...strings].map(s=>({s,score:s.spin*(1-t)+s.control*(1-t)*0.6+ (s.comfort+s.power)*0.5*t})).sort((a,b)=>b.score-a.score)[0].s;
+    const mt=(l,v)=>`<div class="meter"><label>${l}</label><div class="bar"><i style="--v:${sc(v)}"></i></div><span class="val">${v}</span></div>`;
+    const out=document.getElementById('stringOut');
+    out.innerHTML=`<div class="sfh"><div><div class="sfb">${best.brand} · ${best.type==='poly'?'Co-poly':best.type==='multi'?'Multifilament':'Natural gut'}</div><div class="sfn">${best.name}</div></div>
+        <a class="buy" href="${buyLink(best)}" target="_blank" rel="noopener" style="background:var(--red)" aria-label="${buyLabel(best)}">Buy in EU →</a></div>
+      <div class="sfbody"><div class="meters">${mt('Spin',best.spin)}${mt('Control',best.control)}${mt('Power',best.power)}${mt('Comfort',best.comfort)}</div>
+      <div style="font-size:13px;color:var(--mut);margin-top:4px">Best for: <b style="color:var(--red)">${best.best}</b></div></div>`;
+    out.classList.add('show');
+  };
+  document.getElementById('sf_range').addEventListener('input',e=>{
+    const t=+e.target.value;
+    document.getElementById('sfNow').textContent = t<33?'Spin & control':t>66?'Comfort & power':'Balanced';
+  });
+
+  /* ---- SKILL LEVEL TEST ---- */
+  const skillQ=[
+    {q:'How long have you played?',o:[['Under a year',0],['1–3 years',1],['3+ years',2]]},
+    {q:'Typical rally length?',o:[['A few shots',0],['Medium rallies',1],['Long, consistent',2]]},
+    {q:'Your serve?',o:[['Still learning',0],['Reliable',1],['A weapon',2]]},
+    {q:'Match experience?',o:[['None yet',0],['Club / social',1],['Competitive',2]]}
+  ];
+  const skillAns={};
+  document.getElementById('skillQuiz').innerHTML=skillQ.map((item,qi)=>
+    `<div class="q"><b>${qi+1}. ${item.q}</b><div class="opts">${item.o.map(([lab,val])=>`<button class="opt" type="button" data-q="${qi}" data-v="${val}" onclick="pickSkill(${qi},${val},this)">${lab}</button>`).join('')}</div></div>`).join('');
+  window.pickSkill=(qi,val,el)=>{skillAns[qi]=val;el.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');};
+  window.runSkill=()=>{
+    if(Object.keys(skillAns).length<4){alert('Answer all four questions first.');return;}
+    const total=Object.values(skillAns).reduce((a,b)=>a+b,0);
+    let lv,desc;
+    if(total<=2){lv='Beginner · NTRP 1.5–2.5';desc='Prioritise a light, forgiving, arm-friendly frame with a bigger head. Try the Wilson Clash 100 or Head Radical MP with a soft multifilament string.';}
+    else if(total<=5){lv='Intermediate · NTRP 3.0–4.0';desc='A balanced all-court frame gives you room to develop. Try the Head Speed MP or Yonex EZONE 98 with a comfortable co-poly around mid tension.';}
+    else{lv='Advanced · NTRP 4.5+';desc='You can handle a control-oriented player\'s frame. Try the Wilson Pro Staff 97 or Babolat Pure Strike with a full poly bed strung to taste.';}
+    const out=document.getElementById('skillOut');
+    out.innerHTML=`<div class="lv">${lv}</div><p>${desc}</p>`;
+    out.classList.add('show');
+  };
+
+  /* ---- ROUND ROBIN ---- */
+  let rrSchedule=[];
+  window.runRR=()=>{
+    let names=(document.getElementById('rrNames').value||'').split(/[\n,]/).map(s=>s.trim()).filter(Boolean);
+    if(names.length<3){document.getElementById('rrOut').innerHTML='<div class="empty" style="border:2px dashed var(--line)">Add at least 3 players.</div>';return;}
+    const bye=names.length%2!==0; if(bye)names.push('BYE');
+    const n=names.length,rounds=n-1,half=n/2;
+    let arr=names.slice(); rrSchedule=[];
+    for(let r=0;r<rounds;r++){
+      const matches=[];
+      for(let i=0;i<half;i++){
+        const a=arr[i],b=arr[n-1-i];
+        if(a!=='BYE'&&b!=='BYE') matches.push([a,b]);
+      }
+      rrSchedule.push(matches);
+      arr.splice(1,0,arr.pop()); // rotate, keep first fixed
+    }
+    document.getElementById('rrOut').innerHTML=rrSchedule.map((m,i)=>
+      `<div class="rround"><div class="rh">Round ${i+1}</div>${m.map(([a,b])=>`<div class="rm"><span>${a}</span><span class="vs">vs</span><span>${b}</span></div>`).join('')||'<div class="rm">Bye round</div>'}</div>`).join('');
+  };
+  window.downloadRR=()=>{
+    if(!rrSchedule.length){alert('Generate a schedule first.');return;}
+    let csv='Round,Player 1,Player 2\n';
+    rrSchedule.forEach((m,i)=>m.forEach(([a,b])=>{csv+=`${i+1},"${a}","${b}"\n`;}));
+    const blob=new Blob([csv],{type:'text/csv'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download='redline-round-robin.csv';a.click();URL.revokeObjectURL(url);
+  };
+
+  /* ---- BALL TIER LIST ---- */
+  const ballTiers=[
+    {t:'S',cls:'s',items:['Wilson US Open','Dunlop ATP']},
+    {t:'A',cls:'',items:['Babolat Gold','Head Tour','Slazenger Wimbledon']},
+    {t:'B',cls:'',items:['Penn Championship']}
+  ];
+  document.getElementById('ballTiers').innerHTML=ballTiers.map(t=>
+    `<div class="tier ${t.cls}"><div class="tlab">${t.t}</div><div class="titems">${t.items.map(i=>`<span class="ti">${i}</span>`).join('')}</div></div>`).join('');
+
+  /* ---- RACQUET TIER LIST (by overall score) ---- */
+  function renderRacketTiers(){
+    const scored=rackets.map(r=>({r,o:(r.power+r.control+r.spin+r.comfort)/4})).sort((a,b)=>b.o-a.o);
+    const s=scored.slice(0,5),a=scored.slice(5,14),b=scored.slice(14);
+    const chip=({r})=>`<span class="ti">${r.brand} ${r.name}</span>`;
+    document.getElementById('racketTiers').innerHTML=
+      `<div class="tier s"><div class="tlab">S</div><div class="titems">${s.map(chip).join('')}</div></div>
+       <div class="tier"><div class="tlab">A</div><div class="titems">${a.map(chip).join('')}</div></div>
+       <div class="tier"><div class="tlab">B</div><div class="titems">${b.map(chip).join('')||'<span class="ti">—</span>'}</div></div>`;
+  }
+
+  /* ---- RANKINGS ---- */
+  const moveGlyph={up:'<span style="color:var(--red);font-weight:900">▲</span>',down:'<span style="color:var(--ink);font-weight:900">▼</span>','=':'<span style="color:var(--mut);font-weight:900">–</span>'};
+  window.showRank=tour=>{
+    document.querySelectorAll('[data-rk]').forEach(t=>t.classList.toggle('on',t.dataset.rk===tour));
+    document.getElementById('rankBody').innerHTML=rankings[tour].map((p,i)=>
+      `<tr><td style="font-family:'Archivo Expanded',sans-serif;font-weight:900;font-size:16px;${i<3?'color:var(--red)':''}">${i+1}</td>
+      <td class="sname">${p[0]}</td><td style="color:var(--mut);font-weight:700">${p[1]}</td>
+      <td style="font-weight:800">${p[2].toLocaleString()}</td><td>${moveGlyph[p[3]]}</td></tr>`).join('');
+  };
+
+  /* ---- DEAD POLY WARNING ---- */
+  window.runDeadPoly=()=>{
+    const eff=+document.getElementById('dp_hours').value * +document.getElementById('dp_game').value * +document.getElementById('dp_stiff').value;
+    let status,msg;
+    if(eff<8){status='FRESH';msg='Your poly still has good snap-back and tension. Keep playing — no rush to restring.';}
+    else if(eff<15){status='FADING';msg='Snap-back is starting to drop. Fine for casual play, but a competitive player will feel it going flat soon.';}
+    else if(eff<24){status='PAST PRIME';msg='Noticeable tension and spin loss. If you play matches, plan a restring in the next week or two.';}
+    else{status='DEAD';msg='This bed has almost certainly gone dead — flat response, no bite, and a higher arm-injury risk. Restring now.';}
+    const out=document.getElementById('deadOut');
+    out.innerHTML=`<div class="big"><span class="num">${status}</span><span class="unit">≈ ${eff.toFixed(0)} effective hours</span></div><div class="why">${msg}</div>`;
+    out.classList.add('show');
+  };
+
+  /* ---- STRINGING LOG (localStorage) ---- */
+  const LOGKEY='redline_stringing_log';
+  const loadLog=()=>{try{return JSON.parse(localStorage.getItem(LOGKEY))||[]}catch(e){return[]}};
+  window.addLog=()=>{
+    const d=document.getElementById('lg_date').value,r=document.getElementById('lg_racquet').value.trim(),s=document.getElementById('lg_string').value.trim(),t=document.getElementById('lg_tension').value.trim();
+    if(!d||!r){alert('Add at least a date and racquet.');return;}
+    const log=loadLog();log.push({d,r,s,t});
+    localStorage.setItem(LOGKEY,JSON.stringify(log));
+    document.getElementById('lg_racquet').value='';document.getElementById('lg_string').value='';document.getElementById('lg_tension').value='';
+    renderLog();
+  };
+  window.delLog=i=>{const log=loadLog();log.splice(i,1);localStorage.setItem(LOGKEY,JSON.stringify(log));renderLog();};
+  function renderLog(){
+    const log=loadLog(),wrap=document.getElementById('logWrap');
+    if(!log.length){wrap.style.display='none';return;}
+    wrap.style.display='';
+    document.getElementById('logBody').innerHTML=log.map((e,i)=>{
+      const days=Math.max(0,Math.round((new Date()-new Date(e.d))/86400000));
+      return `<tr><td style="font-weight:700">${e.d}</td><td>${e.r}</td><td>${e.s||'—'}</td><td>${e.t?e.t+' kg':'—'}</td>
+      <td style="font-weight:800${days>30?';color:var(--red)':''}">${days} d</td>
+      <td><button class="addcmp" onclick="delLog(${i})">Delete</button></td></tr>`;}).join('');
+  }
+
+  renderRackets(); renderCompareRackets(); renderH2H(); renderStrings(); runFind();
+  renderRacketTiers(); showRank('ATP'); renderLog();
+
+  /* keyboard support for mega-menu links (they're <a> without href) */
+  document.querySelectorAll('.mlink').forEach(el=>{
+    el.tabIndex=0; el.setAttribute('role','button');
+    el.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();el.click();}});
+  });
+  megaBtn.setAttribute('aria-expanded','false');
+  megaBtn.addEventListener('click',()=>megaBtn.setAttribute('aria-expanded',mega.classList.contains('open')));
+
+  /* scroll-spy: highlight the current section in the nav */
+  const navA=[...document.querySelectorAll('nav.links a[href^="#"]')];
+  const spy=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){const id='#'+e.target.id;navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));}
+  }),{rootMargin:'-45% 0px -50% 0px'});
+  ['rackets','strings','balls','players','rankings'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+
+  /* --- a11y wiring (Ada pass) --- */
+  document.querySelectorAll('.qfield').forEach(f=>{const l=f.querySelector('label'),c=f.querySelector('select,input,textarea');if(l&&c&&c.id)l.htmlFor=c.id;});
+  ['findResults','tensionOut','stringOut','skillOut','rrOut','deadOut','rankBody'].forEach(id=>{const el=document.getElementById(id);if(el)el.setAttribute('aria-live','polite');});
+  function syncAria(){
+    document.querySelectorAll('.chip,.cmp-tab').forEach(el=>el.setAttribute('aria-pressed',el.classList.contains('on')));
+    document.querySelectorAll('.opt').forEach(el=>el.setAttribute('aria-pressed',el.classList.contains('sel')));
+  }
+  syncAria();
+  document.addEventListener('click',e=>{if(e.target.closest('.chip,.cmp-tab,.opt'))setTimeout(syncAria,0);});
+  megaBtn.setAttribute('aria-haspopup','true'); megaBtn.setAttribute('aria-controls','mega');
+  const burgerBtn=document.getElementById('burgerBtn');
+  burgerBtn.addEventListener('click',ev=>{ev.stopPropagation();const open=mega.classList.toggle('open');burgerBtn.setAttribute('aria-expanded',open);megaBtn.setAttribute('aria-expanded',open);megaBtn.classList.toggle('on',open);});
+  document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&mega.classList.contains('open')){closeMega();burgerBtn.setAttribute('aria-expanded','false');megaBtn.setAttribute('aria-expanded','false');(window.matchMedia('(max-width:820px)').matches?burgerBtn:megaBtn).focus();}});
+  document.getElementById('newsForm').addEventListener('submit',ev=>{ev.preventDefault();document.getElementById('newsEmail').value='';document.getElementById('newsMsg').textContent="Thanks! Email sign-up isn't wired up yet — the list goes live at launch.";});
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
