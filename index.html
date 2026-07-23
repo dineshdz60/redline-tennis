@@ -422,46 +422,130 @@
   const buyLabel=item=>`Buy ${((item.brand?item.brand+" ":"")+item.name).trim()} at a European store (opens in new tab)`;
 
   const rackets=[
-    {brand:"Babolat",name:"Pure Aero",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:10,comfort:6,verdict:"The spin benchmark — aggressive topspin machine.",buy:EU.tp},
-    {brand:"Babolat",name:"Pure Drive",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:10,control:6,spin:7,comfort:5,verdict:"Effortless pace and depth for compact swings.",buy:EU.tp},
-    {brand:"Babolat",name:"Pure Strike 98",style:"control",badge:"Control · Power",spec:["305g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"Crisp precision with a punchy, connected feel.",buy:EU.tp},
-    {brand:"Babolat",name:"Pure Aero Rafa",style:"spin",badge:"Spin · Power",spec:["315g","100 in²","16×19"],power:9,control:6,spin:10,comfort:5,verdict:"Heavier, more plowing spin monster.",buy:EU.tp},
-    {brand:"Wilson",name:"Pro Staff 97 v14",style:"control",badge:"Control",spec:["315g","97 in²","16×19"],power:5,control:10,spin:6,comfort:6,verdict:"Pure feel and precision for full swings.",buy:EU.twe},
-    {brand:"Wilson",name:"Blade 98 v9",style:"control",badge:"Control · Feel",spec:["305g","98 in²","16×19"],power:6,control:9,spin:8,comfort:7,verdict:"Flexible, plush and razor-accurate.",buy:EU.twe},
-    {brand:"Wilson",name:"Clash 100 v3",style:"allround",badge:"Comfort · Power",spec:["295g","100 in²","16×19"],power:8,control:6,spin:7,comfort:10,verdict:"Uniquely flexible and easy on the arm.",buy:EU.twe},
-    {brand:"Wilson",name:"Ultra 100 v4",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:9,control:6,spin:7,comfort:7,verdict:"Big, stable and forgiving pop.",buy:EU.twe},
-    {brand:"Head",name:"Speed MP",style:"allround",badge:"All-round",spec:["300g","100 in²","16×19"],power:7,control:8,spin:7,comfort:7,verdict:"Balanced do-everything modern frame.",buy:EU.tp},
-    {brand:"Head",name:"Radical MP",style:"allround",badge:"All-round",spec:["300g","98 in²","16×19"],power:7,control:8,spin:7,comfort:8,verdict:"Forgiving, comfortable and easy to improve on.",buy:EU.pro},
-    {brand:"Head",name:"Gravity MP",style:"control",badge:"Control · Spin",spec:["295g","100 in²","16×19"],power:6,control:9,spin:8,comfort:8,verdict:"Comfortable control with easy spin access.",buy:EU.tp},
-    {brand:"Head",name:"Extreme MP",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:9,comfort:6,verdict:"Spin-friendly with a lively, whippy feel.",buy:EU.tp},
-    {brand:"Head",name:"Boom MP",style:"allround",badge:"All-round",spec:["295g","100 in²","16×19"],power:8,control:7,spin:7,comfort:8,verdict:"Smooth, stable and easy to swing fast.",buy:EU.pro},
-    {brand:"Yonex",name:"EZONE 98",style:"power",badge:"Power · Comfort",spec:["305g","98 in²","16×19"],power:8,control:7,spin:7,comfort:9,verdict:"Pocketed feel with pace and comfort.",buy:EU.twe},
-    {brand:"Yonex",name:"VCORE 100",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:7,control:7,spin:9,comfort:7,verdict:"Explosive spin with a lively response.",buy:EU.pro},
-    {brand:"Yonex",name:"Percept 97",style:"control",badge:"Control · Feel",spec:["310g","97 in²","16×19"],power:6,control:9,spin:7,comfort:8,verdict:"Flexible, arm-friendly modern control.",buy:EU.twe},
-    {brand:"Tecnifibre",name:"TFight 305",style:"control",badge:"Control",spec:["305g","98 in²","18×19"],power:7,control:9,spin:7,comfort:6,verdict:"Solid and connected — built for flat drivers.",buy:EU.pro},
-    {brand:"Tecnifibre",name:"Tempo 298",style:"allround",badge:"All-round",spec:["298g","100 in²","16×19"],power:8,control:7,spin:7,comfort:8,verdict:"Stable, comfortable women's-line all-rounder.",buy:EU.pro},
-    {brand:"Dunlop",name:"CX 200",style:"control",badge:"Control",spec:["305g","98 in²","16×19"],power:5,control:9,spin:7,comfort:6,verdict:"Crisp, precise player's frame with great feel.",buy:EU.twe},
-    {brand:"Dunlop",name:"FX 500",style:"power",badge:"Power · Spin",spec:["300g","100 in²","16×19"],power:9,control:6,spin:8,comfort:7,verdict:"Fast, powerful and spin-friendly.",buy:EU.twe},
-    {brand:"Prince",name:"Phantom 100",style:"control",badge:"Control · Feel",spec:["305g","100 in²","18×20"],power:5,control:9,spin:6,comfort:9,verdict:"Ultra-flexible, buttery touch and control.",buy:EU.pro},
-    {brand:"Babolat",name:"Pure Aero 98",style:"spin",badge:"Spin · Control",spec:["305g","98 in²","16×20"],power:7,control:8,spin:9,comfort:6,verdict:"Tighter, more controlled take on the Aero.",buy:EU.tp}
+{brand:"Babolat",name:"Pure Aero",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:10,comfort:6,verdict:"The topspin standard — heavy rotation and a lively response.",buy:EU.tp},
+{brand:"Babolat",name:"Pure Aero 98",style:"spin",badge:"Spin+Control",spec:["305g","98 in²","16×20"],power:7,control:8,spin:9,comfort:5,verdict:"Tighter, more precise take on the Aero for firmer hitters.",buy:EU.tp},
+{brand:"Babolat",name:"Pure Aero VS",style:"control",badge:"Player",spec:["320g","98 in²","16×20"],power:7,control:9,spin:8,comfort:5,verdict:"Heavy, flexible players' Aero built for control-first ball-strikers.",buy:EU.pro},
+{brand:"Babolat",name:"Pure Aero Team",style:"spin",badge:"Lighter",spec:["285g","100 in²","16×19"],power:8,control:6,spin:9,comfort:6,verdict:"Same spin brief in an easier-to-swing frame.",buy:EU.twe},
+{brand:"Babolat",name:"Pure Aero Rafa",style:"spin",badge:"Origin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:10,comfort:6,verdict:"Nadal-flavoured Aero — spin and pop in equal measure.",buy:EU.tp},
+{brand:"Babolat",name:"Pure Drive",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:10,control:6,spin:7,comfort:5,verdict:"The go-to power stick — explosive and forgiving.",buy:EU.tp},
+{brand:"Babolat",name:"Pure Drive Tour",style:"power",badge:"Power+",spec:["315g","100 in²","16×19"],power:9,control:7,spin:7,comfort:5,verdict:"Heavier Pure Drive for players who can drive the weight.",buy:EU.pro},
+{brand:"Babolat",name:"Pure Drive 98",style:"allround",badge:"Tweener",spec:["305g","98 in²","16×19"],power:8,control:8,spin:7,comfort:5,verdict:"Denser, more controlled Pure Drive with real bite.",buy:EU.twe},
+{brand:"Babolat",name:"Pure Drive Team",style:"power",badge:"Lighter",spec:["285g","100 in²","16×19"],power:9,control:6,spin:7,comfort:6,verdict:"Accessible power in a lighter swing.",buy:EU.twe},
+{brand:"Babolat",name:"Pure Strike 98 16×19",style:"control",badge:"Control",spec:["305g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"Crisp, precise players' frame with a comfortable feel.",buy:EU.pro},
+{brand:"Babolat",name:"Pure Strike 98 18×20",style:"control",badge:"Precision",spec:["305g","98 in²","18×20"],power:6,control:10,spin:6,comfort:6,verdict:"The tightest Strike — flat, pinpoint, directional.",buy:EU.pro},
+{brand:"Babolat",name:"Pure Strike 100",style:"allround",badge:"Balanced",spec:["300g","100 in²","16×19"],power:8,control:7,spin:7,comfort:6,verdict:"Bigger-headed Strike blending pop with control.",buy:EU.twe},
+{brand:"Babolat",name:"Pure Strike Team",style:"allround",badge:"Lighter",spec:["285g","100 in²","16×19"],power:7,control:7,spin:7,comfort:7,verdict:"Easy-swinging entry to the Strike line.",buy:EU.twe},
+{brand:"Babolat",name:"Pure Strike 97",style:"control",badge:"Player",spec:["310g","97 in²","18×20"],power:6,control:10,spin:6,comfort:5,verdict:"Small, dense control frame for advanced ball-strikers.",buy:EU.pro},
+{brand:"Wilson",name:"Blade 98 16×19 v9",style:"control",badge:"Control",spec:["305g","98 in²","16×19"],power:7,control:9,spin:8,comfort:7,verdict:"Plush, flexible players' frame with modern spin access.",buy:EU.pro},
+{brand:"Wilson",name:"Blade 98 18×20 v9",style:"control",badge:"Precision",spec:["305g","98 in²","18×20"],power:6,control:10,spin:6,comfort:7,verdict:"The denser Blade — flatter, more directional control.",buy:EU.pro},
+{brand:"Wilson",name:"Blade 100 v9",style:"allround",badge:"Balanced",spec:["300g","100 in²","16×19"],power:8,control:7,spin:8,comfort:7,verdict:"Roomier, more forgiving Blade with a soft feel.",buy:EU.twe},
+{brand:"Wilson",name:"Pro Staff 97 v14",style:"control",badge:"Feel",spec:["315g","97 in²","16×19"],power:6,control:9,spin:7,comfort:6,verdict:"Classic thin-beam feel and connected control.",buy:EU.pro},
+{brand:"Wilson",name:"Pro Staff RF97 Autograph",style:"control",badge:"Heavy",spec:["340g","97 in²","16×19"],power:7,control:10,spin:6,comfort:6,verdict:"Federer's heavyweight — stability and precision for strong arms.",buy:EU.pro},
+{brand:"Wilson",name:"Pro Staff 97L",style:"allround",badge:"Lighter",spec:["290g","97 in²","16×19"],power:7,control:8,spin:7,comfort:7,verdict:"Pro Staff feel in a lighter, faster swing.",buy:EU.twe},
+{brand:"Wilson",name:"Clash 100 v3",style:"allround",badge:"Comfort",spec:["295g","100 in²","16×19"],power:8,control:7,spin:8,comfort:9,verdict:"Uniquely flexible and arm-friendly without going soft on spin.",buy:EU.twe},
+{brand:"Wilson",name:"Clash 100 Pro v3",style:"control",badge:"Comfort+",spec:["310g","100 in²","16×20"],power:7,control:8,spin:7,comfort:9,verdict:"Heavier, steadier Clash for comfort-seeking baseliners.",buy:EU.pro},
+{brand:"Wilson",name:"Clash 98 v3",style:"control",badge:"Feel",spec:["310g","98 in²","16×19"],power:6,control:9,spin:7,comfort:9,verdict:"The most controlled Clash — flexible and forgiving on the arm.",buy:EU.pro},
+{brand:"Wilson",name:"Ultra 100 v4",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:9,control:6,spin:7,comfort:7,verdict:"Effortless free power with a stable, comfortable feel.",buy:EU.tp},
+{brand:"Wilson",name:"Ultra Pro 97 v4",style:"control",badge:"Player",spec:["305g","97 in²","18×20"],power:6,control:9,spin:6,comfort:7,verdict:"The players' Ultra — dense pattern, precise and clean.",buy:EU.pro},
+{brand:"Wilson",name:"Shift 99 v1",style:"allround",badge:"Flexible",spec:["300g","99 in²","16×19"],power:7,control:8,spin:8,comfort:8,verdict:"Whippy, flexible newcomer built for a snappy, spin-friendly swing.",buy:EU.twe},
+{brand:"Wilson",name:"Shift 99 Pro v1",style:"control",badge:"Player",spec:["315g","99 in²","16×19"],power:7,control:9,spin:8,comfort:7,verdict:"Heavier Shift with more plow-through and stability.",buy:EU.pro},
+{brand:"Head",name:"Speed MP",style:"allround",badge:"Balanced",spec:["300g","100 in²","16×19"],power:8,control:8,spin:8,comfort:7,verdict:"The all-court default — does everything competently.",buy:EU.tp},
+{brand:"Head",name:"Speed Pro",style:"control",badge:"Player",spec:["310g","100 in²","18×20"],power:7,control:9,spin:7,comfort:6,verdict:"Djokovic-line control frame with a dense, precise string bed.",buy:EU.pro},
+{brand:"Head",name:"Speed Team",style:"allround",badge:"Lighter",spec:["285g","100 in²","16×19"],power:8,control:7,spin:7,comfort:8,verdict:"Lighter, maneuverable take on the Speed.",buy:EU.twe},
+{brand:"Head",name:"Radical MP",style:"allround",badge:"Balanced",spec:["300g","98 in²","16×19"],power:7,control:8,spin:8,comfort:7,verdict:"Long-running all-rounder — clean, controlled, versatile.",buy:EU.twe},
+{brand:"Head",name:"Radical Pro",style:"control",badge:"Player",spec:["315g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"Heavier Radical for stronger, control-minded hitters.",buy:EU.pro},
+{brand:"Head",name:"Extreme MP",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:7,spin:9,comfort:7,verdict:"Head's spin frame — easy launch and heavy rotation.",buy:EU.tp},
+{brand:"Head",name:"Extreme Tour",style:"spin",badge:"Spin+Control",spec:["305g","98 in²","18×20"],power:6,control:9,spin:8,comfort:6,verdict:"Tighter, more controlled Extreme for the advanced spin player.",buy:EU.pro},
+{brand:"Head",name:"Prestige MP",style:"control",badge:"Control",spec:["320g","98 in²","18×20"],power:6,control:10,spin:6,comfort:6,verdict:"Storied control classic — dense, flat, exacting.",buy:EU.pro},
+{brand:"Head",name:"Prestige Pro",style:"control",badge:"Heavy",spec:["330g","98 in²","18×20"],power:6,control:10,spin:6,comfort:6,verdict:"The heavyweight Prestige — stability for powerful players.",buy:EU.pro},
+{brand:"Head",name:"Prestige Tour",style:"control",badge:"Player",spec:["305g","99 in²","18×19"],power:6,control:9,spin:7,comfort:7,verdict:"Slightly more forgiving Prestige with a touch more spin.",buy:EU.pro},
+{brand:"Head",name:"Gravity MP",style:"allround",badge:"Feel",spec:["295g","100 in²","16×20"],power:7,control:8,spin:8,comfort:8,verdict:"Comfortable, connected all-court frame with a big sweet spot.",buy:EU.twe},
+{brand:"Head",name:"Gravity Pro",style:"control",badge:"Player",spec:["315g","100 in²","18×20"],power:6,control:9,spin:7,comfort:7,verdict:"Zverev-line control with a plush, muted response.",buy:EU.pro},
+{brand:"Head",name:"Gravity Tour",style:"allround",badge:"Balanced",spec:["305g","100 in²","16×20"],power:7,control:8,spin:7,comfort:8,verdict:"Middle-weight Gravity balancing comfort and stability.",buy:EU.twe},
+{brand:"Head",name:"Boom MP",style:"power",badge:"Power+Spin",spec:["295g","100 in²","16×19"],power:9,control:6,spin:8,comfort:7,verdict:"Free power with a lively, spin-friendly string bed.",buy:EU.tp},
+{brand:"Head",name:"Boom Pro",style:"power",badge:"Power",spec:["310g","100 in²","16×19"],power:8,control:7,spin:8,comfort:7,verdict:"Heavier Boom for players who want power with more control.",buy:EU.pro},
+{brand:"Yonex",name:"EZONE 98",style:"allround",badge:"Balanced",spec:["305g","98 in²","16×19"],power:8,control:8,spin:8,comfort:8,verdict:"Smooth, comfortable all-rounder with a big feel.",buy:EU.tp},
+{brand:"Yonex",name:"EZONE 100",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:9,control:6,spin:7,comfort:8,verdict:"Easy power and pocketing comfort — very forgiving.",buy:EU.tp},
+{brand:"Yonex",name:"EZONE 98 Tour",style:"control",badge:"Heavy",spec:["315g","98 in²","16×19"],power:7,control:9,spin:7,comfort:7,verdict:"Denser-feeling, heavier EZONE for advanced players.",buy:EU.pro},
+{brand:"Yonex",name:"EZONE 100L",style:"power",badge:"Lighter",spec:["285g","100 in²","16×19"],power:8,control:6,spin:7,comfort:8,verdict:"Lighter EZONE keeping the easy power and comfort.",buy:EU.twe},
+{brand:"Yonex",name:"VCORE 95",style:"control",badge:"Player",spec:["310g","95 in²","16×20"],power:6,control:9,spin:8,comfort:6,verdict:"Small, precise spin-and-control frame for strong arms.",buy:EU.pro},
+{brand:"Yonex",name:"VCORE 98",style:"spin",badge:"Spin",spec:["305g","98 in²","16×19"],power:7,control:8,spin:9,comfort:7,verdict:"Yonex's spin flagship — heavy, controllable rotation.",buy:EU.tp},
+{brand:"Yonex",name:"VCORE 100",style:"spin",badge:"Spin+Power",spec:["300g","100 in²","16×19"],power:8,control:6,spin:9,comfort:7,verdict:"More power and launch in the spin-oriented VCORE.",buy:EU.twe},
+{brand:"Yonex",name:"Percept 97",style:"control",badge:"Feel",spec:["310g","97 in²","16×19"],power:6,control:9,spin:7,comfort:8,verdict:"Flexible, feel-first players' frame for touch and control.",buy:EU.pro},
+{brand:"Yonex",name:"Percept 100",style:"allround",badge:"Balanced",spec:["300g","100 in²","16×19"],power:7,control:8,spin:8,comfort:8,verdict:"Comfortable, controlled all-court frame with soft feel.",buy:EU.twe},
+{brand:"Yonex",name:"Percept 97D",style:"control",badge:"Precision",spec:["320g","97 in²","18×20"],power:6,control:10,spin:6,comfort:7,verdict:"The dense, heavy Percept — flat and pinpoint.",buy:EU.pro},
+{brand:"Tecnifibre",name:"TFight 300",style:"control",badge:"Control",spec:["300g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"Firm, precise players' frame with a solid, connected feel.",buy:EU.pro},
+{brand:"Tecnifibre",name:"TFight 305",style:"control",badge:"Player",spec:["305g","98 in²","18×19"],power:7,control:9,spin:7,comfort:6,verdict:"Medvedev-line control frame — stable and directional.",buy:EU.pro},
+{brand:"Tecnifibre",name:"TFight 315",style:"control",badge:"Heavy",spec:["315g","98 in²","18×20"],power:7,control:9,spin:6,comfort:6,verdict:"Heavier, denser TFight for advanced ball-strikers.",buy:EU.pro},
+{brand:"Tecnifibre",name:"TF40 305",style:"control",badge:"Precision",spec:["305g","98 in²","18×20"],power:6,control:10,spin:6,comfort:6,verdict:"Traditional control frame — dense pattern, clean feel.",buy:EU.pro},
+{brand:"Tecnifibre",name:"TF40 315",style:"control",badge:"Heavy",spec:["315g","98 in²","16×19"],power:7,control:9,spin:7,comfort:6,verdict:"More weight and a slightly opener pattern than the 305.",buy:EU.pro},
+{brand:"Dunlop",name:"CX 200",style:"control",badge:"Control",spec:["305g","98 in²","16×19"],power:6,control:9,spin:7,comfort:6,verdict:"Crisp, precise control frame with a firm response.",buy:EU.pro},
+{brand:"Dunlop",name:"CX 200 Tour 18×20",style:"control",badge:"Precision",spec:["315g","95 in²","18×20"],power:6,control:10,spin:6,comfort:6,verdict:"Small, dense, exacting — a purist's control stick.",buy:EU.pro},
+{brand:"Dunlop",name:"FX 500",style:"power",badge:"Power",spec:["300g","100 in²","16×19"],power:9,control:6,spin:7,comfort:7,verdict:"Punchy power frame with an aerodynamic swing.",buy:EU.tp},
+{brand:"Dunlop",name:"FX 500 Tour",style:"power",badge:"Power+",spec:["305g","100 in²","16×18"],power:9,control:7,spin:7,comfort:6,verdict:"Heavier FX with an open bed for more free power.",buy:EU.pro},
+{brand:"Dunlop",name:"SX 300",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:6,spin:9,comfort:7,verdict:"Dunlop's spin frame — grippy, launchy, rotation-heavy.",buy:EU.tp},
+{brand:"Dunlop",name:"SX 300 Tour",style:"spin",badge:"Spin+Control",spec:["305g","100 in²","16×19"],power:7,control:8,spin:9,comfort:6,verdict:"Heavier SX with more control behind the spin.",buy:EU.pro},
+{brand:"Prince",name:"Phantom 100",style:"control",badge:"Feel",spec:["305g","100 in²","16×18"],power:6,control:9,spin:7,comfort:8,verdict:"Flexible, low-power feel frame for touch players.",buy:EU.pro},
+{brand:"Prince",name:"Phantom 97",style:"control",badge:"Player",spec:["310g","97 in²","16×18"],power:5,control:10,spin:7,comfort:8,verdict:"Very flexible, connected control for advanced hands.",buy:EU.pro},
+{brand:"Prince",name:"Textreme Tour 100P",style:"control",badge:"Precision",spec:["305g","100 in²","18×20"],power:6,control:9,spin:6,comfort:7,verdict:"Dense, controlled players' frame with a clean feel.",buy:EU.pro},
+{brand:"Prince",name:"Ripstick 100",style:"spin",badge:"Spin",spec:["300g","100 in²","16×19"],power:8,control:7,spin:9,comfort:7,verdict:"Prince's spin frame with a lively, grippy string bed.",buy:EU.twe},
+{brand:"Solinco",name:"Blackout 300",style:"allround",badge:"Balanced",spec:["300g","100 in²","16×19"],power:8,control:7,spin:8,comfort:6,verdict:"Fast-swinging all-rounder from a string-first brand.",buy:EU.twe},
+{brand:"Solinco",name:"Whiteout 305",style:"control",badge:"Player",spec:["305g","98 in²","16×19"],power:7,control:9,spin:8,comfort:6,verdict:"Firm, precise control frame with modern spin access.",buy:EU.pro},
+{brand:"Volkl",name:"C10 Pro",style:"control",badge:"Comfort",spec:["315g","98 in²","16×19"],power:7,control:9,spin:6,comfort:9,verdict:"Long-standing flexible classic — plush and arm-friendly.",buy:EU.pro}
   ];
 
   const strings=[
-    {brand:"Luxilon",name:"ALU Power",type:"poly",spin:8,control:9,power:6,comfort:4,best:"Control baseliners",buy:EU.twe},
-    {brand:"Babolat",name:"RPM Blast",type:"poly",spin:10,control:8,power:6,comfort:4,best:"Heavy topspin",buy:EU.tp},
-    {brand:"Solinco",name:"Hyper-G",type:"poly",spin:9,control:8,power:6,comfort:5,best:"Spin + control",buy:EU.twe},
-    {brand:"Solinco",name:"Tour Bite",type:"poly",spin:9,control:9,power:5,comfort:4,best:"Max spin & bite",buy:EU.twe},
-    {brand:"Luxilon",name:"4G",type:"poly",spin:7,control:9,power:6,comfort:5,best:"Tension keepers",buy:EU.tp},
-    {brand:"Head",name:"Lynx Tour",type:"poly",spin:8,control:8,power:6,comfort:5,best:"All-court control",buy:EU.tp},
-    {brand:"Yonex",name:"Poly Tour Pro",type:"poly",spin:7,control:8,power:7,comfort:6,best:"Comfortable poly",buy:EU.twe},
-    {brand:"Wilson",name:"NXT",type:"multi",spin:5,control:6,power:8,comfort:9,best:"Comfort & arm care",buy:EU.pro},
-    {brand:"Tecnifibre",name:"X-One Biphase",type:"multi",spin:5,control:6,power:9,comfort:9,best:"Power + touch",buy:EU.pro},
-    {brand:"Babolat",name:"VS Touch",type:"gut",spin:6,control:7,power:9,comfort:10,best:"Ultimate feel",buy:EU.tp},
-    {brand:"Wilson",name:"Natural Gut",type:"gut",spin:6,control:7,power:10,comfort:10,best:"Power & comfort",buy:EU.twe}
+{brand:"Luxilon",name:"ALU Power",type:"poly",shape:"Round",stiff:"Stiff",spin:8,control:9,power:6,comfort:4,best:"Control baseliners",buy:EU.twe},
+{brand:"Luxilon",name:"ALU Power Rough",type:"poly",shape:"Shaped",stiff:"Stiff",spin:9,control:9,power:6,comfort:4,best:"Spin with control",buy:EU.twe},
+{brand:"Luxilon",name:"ALU Power Soft",type:"poly",shape:"Round",stiff:"Medium",spin:8,control:8,power:6,comfort:6,best:"Slightly softer ALU feel",buy:EU.twe},
+{brand:"Luxilon",name:"4G",type:"poly",shape:"Round",stiff:"Stiff",spin:7,control:9,power:5,comfort:4,best:"Durability and tension hold",buy:EU.twe},
+{brand:"Luxilon",name:"4G Rough",type:"poly",shape:"Shaped",stiff:"Stiff",spin:8,control:9,power:5,comfort:4,best:"Durable string with grip",buy:EU.twe},
+{brand:"Luxilon",name:"Element",type:"poly",shape:"Round",stiff:"Soft",spin:7,control:7,power:7,comfort:7,best:"Arm-friendly poly players",buy:EU.pro},
+{brand:"Luxilon",name:"Adrenaline",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:6,comfort:6,best:"All-round comfortable poly",buy:EU.pro},
+{brand:"Luxilon",name:"Savage",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:5,best:"Spin seekers",buy:EU.pro},
+{brand:"Babolat",name:"RPM Blast",type:"poly",shape:"Shaped",stiff:"Stiff",spin:9,control:8,power:6,comfort:4,best:"Heavy topspin",buy:EU.tp},
+{brand:"Babolat",name:"RPM Blast Rough",type:"poly",shape:"Shaped",stiff:"Stiff",spin:10,control:8,power:6,comfort:4,best:"Maximum grip and spin",buy:EU.tp},
+{brand:"Babolat",name:"RPM Soft",type:"poly",shape:"Shaped",stiff:"Soft",spin:8,control:7,power:6,comfort:7,best:"Softer RPM feel",buy:EU.tp},
+{brand:"Babolat",name:"RPM Power",type:"poly",shape:"Round",stiff:"Medium",spin:8,control:7,power:8,comfort:6,best:"Spin with more pop",buy:EU.tp},
+{brand:"Babolat",name:"Pro Hurricane Tour",type:"poly",shape:"Round",stiff:"Stiff",spin:8,control:8,power:6,comfort:4,best:"Firm control poly",buy:EU.twe},
+{brand:"Babolat",name:"Xcel",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:6,power:8,comfort:9,best:"Comfort and power",buy:EU.tp},
+{brand:"Babolat",name:"Origin",type:"poly",shape:"Round",stiff:"Medium",spin:6,control:7,power:7,comfort:7,best:"Softer poly all-rounder",buy:EU.pro},
+{brand:"Babolat",name:"VS Touch",type:"gut",shape:"Round",stiff:"Soft",spin:6,control:8,power:9,comfort:10,best:"Premium feel and power",buy:EU.tp},
+{brand:"Solinco",name:"Hyper-G",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:8,power:6,comfort:6,best:"Spin and control value",buy:EU.pro},
+{brand:"Solinco",name:"Hyper-G Soft",type:"poly",shape:"Shaped",stiff:"Soft",spin:9,control:7,power:6,comfort:7,best:"Softer Hyper-G",buy:EU.pro},
+{brand:"Solinco",name:"Tour Bite",type:"poly",shape:"Shaped",stiff:"Stiff",spin:10,control:8,power:5,comfort:3,best:"Aggressive spin",buy:EU.pro},
+{brand:"Solinco",name:"Tour Bite Soft",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:5,best:"Spin with more comfort",buy:EU.pro},
+{brand:"Solinco",name:"Confidential",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:7,comfort:6,best:"Comfortable control poly",buy:EU.pro},
+{brand:"Head",name:"Lynx",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:6,comfort:6,best:"All-round control",buy:EU.twe},
+{brand:"Head",name:"Lynx Tour",type:"poly",shape:"Shaped",stiff:"Medium",spin:8,control:8,power:6,comfort:6,best:"Control with grip",buy:EU.twe},
+{brand:"Head",name:"Lynx Edge",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:5,best:"Shaped spin string",buy:EU.twe},
+{brand:"Head",name:"Hawk",type:"poly",shape:"Round",stiff:"Stiff",spin:7,control:9,power:5,comfort:4,best:"Firm control and durability",buy:EU.twe},
+{brand:"Head",name:"Hawk Touch",type:"poly",shape:"Round",stiff:"Soft",spin:7,control:8,power:6,comfort:7,best:"Softer control poly",buy:EU.twe},
+{brand:"Head",name:"Velocity MLT",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:6,power:8,comfort:9,best:"Comfort players",buy:EU.pro},
+{brand:"Yonex",name:"Poly Tour Pro",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:7,comfort:7,best:"Comfortable all-round poly",buy:EU.tp},
+{brand:"Yonex",name:"Poly Tour Strike",type:"poly",shape:"Round",stiff:"Stiff",spin:7,control:9,power:6,comfort:5,best:"Control and durability",buy:EU.tp},
+{brand:"Yonex",name:"Poly Tour Rev",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:6,best:"Spin generation",buy:EU.tp},
+{brand:"Yonex",name:"Poly Tour Spin",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:5,best:"Textured spin string",buy:EU.tp},
+{brand:"Yonex",name:"Rexis",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:7,power:8,comfort:9,best:"Premium multifilament comfort",buy:EU.pro},
+{brand:"Wilson",name:"Revolve",type:"poly",shape:"Shaped",stiff:"Medium",spin:8,control:7,power:6,comfort:6,best:"Affordable spin poly",buy:EU.twe},
+{brand:"Wilson",name:"NXT",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:6,power:8,comfort:9,best:"Classic comfort multi",buy:EU.twe},
+{brand:"Wilson",name:"Sensation",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:6,power:7,comfort:9,best:"Value comfort string",buy:EU.twe},
+{brand:"Wilson",name:"Natural Gut",type:"gut",shape:"Round",stiff:"Soft",spin:6,control:8,power:9,comfort:10,best:"Ultimate comfort and feel",buy:EU.tp},
+{brand:"Wilson",name:"Champion's Choice",type:"gut",shape:"Round",stiff:"Medium",spin:8,control:9,power:8,comfort:8,best:"Gut/ALU hybrid setup",buy:EU.tp},
+{brand:"Tecnifibre",name:"Razor Code",type:"poly",shape:"Round",stiff:"Medium",spin:8,control:8,power:6,comfort:6,best:"Control with comfort",buy:EU.pro},
+{brand:"Tecnifibre",name:"Black Code",type:"poly",shape:"Shaped",stiff:"Medium",spin:8,control:8,power:6,comfort:6,best:"Spin and control blend",buy:EU.pro},
+{brand:"Tecnifibre",name:"Ice Code",type:"poly",shape:"Round",stiff:"Soft",spin:7,control:8,power:6,comfort:7,best:"Softer control poly",buy:EU.pro},
+{brand:"Tecnifibre",name:"Triax",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:7,power:7,comfort:9,best:"Arm-friendly firmness",buy:EU.pro},
+{brand:"Tecnifibre",name:"X-One Biphase",type:"multi",shape:"Round",stiff:"Soft",spin:5,control:6,power:8,comfort:10,best:"Premium comfort multi",buy:EU.tp},
+{brand:"Kirschbaum",name:"Pro Line II",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:6,comfort:6,best:"Reliable control poly",buy:EU.pro},
+{brand:"Kirschbaum",name:"Spiky Shark",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:7,power:6,comfort:5,best:"Textured spin string",buy:EU.pro},
+{brand:"MSV",name:"Focus Hex",type:"poly",shape:"Shaped",stiff:"Medium",spin:9,control:8,power:6,comfort:6,best:"Value spin poly",buy:EU.pro},
+{brand:"Volkl",name:"Cyclone",type:"poly",shape:"Shaped",stiff:"Medium",spin:8,control:8,power:6,comfort:6,best:"Affordable spin and control",buy:EU.twe},
+{brand:"Signum Pro",name:"Poly Plasma",type:"poly",shape:"Round",stiff:"Medium",spin:7,control:8,power:6,comfort:6,best:"Control-oriented poly",buy:EU.pro}
   ];
   // string characteristics (shape + stiffness) for the finder/filter
   const strMeta={"ALU Power":["Round","Stiff"],"RPM Blast":["Shaped","Stiff"],"Hyper-G":["Shaped","Medium"],"Tour Bite":["Shaped","Stiff"],"4G":["Round","Stiff"],"Lynx Tour":["Shaped","Medium"],"Poly Tour Pro":["Round","Medium"],"NXT":["Round","Soft"],"X-One Biphase":["Round","Soft"],"VS Touch":["Round","Soft"],"Natural Gut":["Round","Soft"]};
-  strings.forEach(s=>{const m=strMeta[s.name]||["Round","Medium"];s.shape=m[0];s.stiff=m[1];});
+  strings.forEach(s=>{if(!s.shape)s.shape="Round";if(!s.stiff)s.stiff="Medium";});
 
   // ATP / WTA rankings — representative snapshot (rankings change weekly)
   const rankings={
@@ -767,12 +851,11 @@
   /* ---- RACQUET TIER LIST (by overall score) ---- */
   function renderRacketTiers(){
     const scored=rackets.map(r=>({r,o:(r.power+r.control+r.spin+r.comfort)/4})).sort((a,b)=>b.o-a.o);
-    const s=scored.slice(0,5),a=scored.slice(5,14),b=scored.slice(14);
-    const chip=({r})=>`<span class="ti">${r.brand} ${r.name}</span>`;
-    document.getElementById('racketTiers').innerHTML=
-      `<div class="tier s"><div class="tlab">S</div><div class="titems">${s.map(chip).join('')}</div></div>
-       <div class="tier"><div class="tlab">A</div><div class="titems">${a.map(chip).join('')}</div></div>
-       <div class="tier"><div class="tlab">B</div><div class="titems">${b.map(chip).join('')||'<span class="ti">—</span>'}</div></div>`;
+    const n=scored.length, chip=({r})=>`<span class="ti">${r.brand} ${r.name}</span>`;
+    const cuts=[['S',Math.max(5,Math.round(n*0.12))],['A',Math.round(n*0.4)],['B',Math.round(n*0.75)],['C',n]];
+    let start=0,html='';
+    cuts.forEach(([lab,end])=>{const seg=scored.slice(start,end);start=end;if(seg.length)html+=`<div class="tier ${lab==='S'?'s':''}"><div class="tlab">${lab}</div><div class="titems">${seg.map(chip).join('')}</div></div>`;});
+    document.getElementById('racketTiers').innerHTML=html;
   }
 
   /* ---- RANKINGS ---- */
